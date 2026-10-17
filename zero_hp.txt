@@ -1,0 +1,20 @@
+*label regeneration_iteration
+*comment What happens when you run out of Health
+*gosub_scene use_blood
+*set health +1
+*if health < 1
+	*goto regeneration_iteration	
+*if hunger > 5
+	*set hunger 5
+	*set willpower -1
+	*if willpower < 0
+		*set willpower 0
+*return
+*label zero_car
+*set car "undetermined"
+*set car_short "undetermined"
+*set base_car_resale 0
+*set car_resale 0
+*set upkeep -car_upkeep
+*set car_upkeep 0
+*return

@@ -1,0 +1,109 @@
+*comment Difficulty Calculator Miniscene
+
+*set claws_out false
+*set fangs_out false
+*set beast_form false
+
+*set talked_to_elena false
+*comment Every time you finish a mission you can talk to Елена again.
+
+*set ghoul_activity_available true
+*comment Every time you finish a mission you can engage in another ghoul activity, if you have a ghoul
+
+*set willpower +1
+*if willpower > max_willpower
+	*set willpower max_willpower
+*comment Restores some expended Сила воли
+
+*set hunger +1
+*if hunger > 5
+	*set hunger 5
+	*set health -1
+
+*set swordfight combat
+*set gunfight firearms
+*if has_better_sword
+	*set swordfight +1
+*if has_better_gun
+	*set gunfight +1
+*if sword_pearl
+	*set swordfight +1
+*if gun_pearl
+	*set gunfight +1
+
+*if missions = 0	
+	*set easy 1
+	*set moderate 3
+	*set hard 5
+	*set very_hard 7
+	*set damage 1
+*elseif missions = 1
+	*set easy 2
+	*set moderate 3
+	*set hard 4
+	*set very_hard 5
+	*set damage 1
+*elseif missions = 2
+	*set easy 3
+	*set moderate 4
+	*set hard 5
+	*set very_hard 6
+	*set damage 1
+*elseif missions = 3
+	*set easy 3
+	*set moderate 4
+	*set hard 5
+	*set very_hard 6
+	*set damage 2
+*elseif missions = 4
+	*set easy 4
+	*set moderate 5
+	*set hard 6
+	*set very_hard 7
+	*set damage 2
+*elseif missions = 5
+	*set easy 5
+	*set moderate 6
+	*set hard 7
+	*set very_hard 8
+	*set damage 2
+*else	
+	*set easy 5
+	*set moderate 6
+	*set hard 7
+	*set very_hard 8
+	*set damage 3
+	
+*set xp_penalty false
+		
+*set tried_elena_alliance false
+*comment This one resets at the end of every mission so you can try to secure an alliance again
+
+*set ghoul_activity_available true
+*comment This variable means you have to complete a mission before you have another date/adventure/outing with your ghoul.
+
+*set garnet_ring_used false
+*set generation_7_used false
+*set generation_8_used false
+*set generation_9_used false
+*set generation_10_used false
+
+*set regained_willpower false
+*comment Lets you regain Сила воли after finishing a mission.
+
+*temp millicent_unlocks 0
+
+*if celerity_unlocked
+	*set millicent_unlocks +1
+*if dominate_unlocked
+	*set millicent_unlocks +1
+*if oblivion_unlocked
+	*set millicent_unlocks +1
+*if potence_unlocked
+	*set millicent_unlocks +1
+	
+*if millicent_unlocks = 4
+	*set millicent_blood_promised false
+*comment This causes you to lose your chance at Миллисент's Кровь if you've already unlocked all the Disciplines она can teach
+
+*return

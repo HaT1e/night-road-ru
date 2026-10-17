@@ -1,0 +1,50 @@
+*comment Wolf Name
+
+*label wolf_name
+
+*set upkeep +100
+
+*set has_wolf true
+
+*choice
+	#"Варг."
+		*set wolf "Варг"
+	#"Тень."
+		*set wolf "Шэдоу"
+	*if wolf_he_she != "она"
+		#"Чурка."
+			*set wolf "Чурка"
+	*if wolf_he_she != "она"
+		#"Зайят."
+			*set wolf "Зайят"
+	*if wolf_he_she != "он"
+		#"Энноя."
+			*set wolf "Эннойя"
+	*if wolf_he_she != "он"
+		#"Магда."
+			*set wolf "Магда"
+	#Что-то другое …
+		*input_text wolf
+*return
+
+*label wolf_gender
+
+*set has_wolf true
+*choice
+	#Самец.
+		*set wolf_he_she "он"
+		*set wolf_him_her "его"
+		*set wolf_his_her "его"
+		*set wolf_himself_herself "себя"
+		*set wolf_boy_girl "парень"
+		Твой
+	#Самка.
+		*set wolf_he_she "она"
+		*set wolf_him_her "её"
+		*set wolf_his_her "её"
+		*set wolf_himself_herself "себя"
+		*set wolf_boy_girl "девушка"
+		Твоя
+	#Волк!
+		Справедливо. Твой
+*return

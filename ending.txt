@@ -1,0 +1,250 @@
+*if testing_mode
+	*page_break
+
+	Отладочные данные:
+
+	*if reremouse_fate = "teleported"
+		Реремаус телепортирован
+	*if reremouse_fate = "destroyed"
+		Реремаус уничтожен
+	*if reremouse_fate = "escaped"
+		Реремаус сбежал
+	*line_break
+	*if masquerade < 1
+		Маскарад 0
+	*if masquerade = 1
+		Маскарад 1
+	*if masquerade = 2
+		Маскарад 2
+	*if masquerade = 3
+		Маскарад 3
+	*line_break
+
+	*if near_wight
+		Рядом с вихтом
+	*line_break
+	*if humanity = 1
+		Человечность 1
+	*if humanity = 2
+		Человечность 2
+	*if humanity = 3
+		Человечность 3
+	*if humanity = 4
+		Человечность 4
+	*if humanity = 5
+		Человечность 5
+	*line_break
+
+	*if convictions = 0
+		Убеждения: 0
+	*if convictions = 1
+		Убеждение: 1
+	*if convictions = 2
+		Убеждения: 2
+	*if convictions = 3
+		Убеждения: 3
+	*line_break
+
+	Критические промахи: ${messy_criticals}
+	*line_break
+
+	*check_achievements
+
+	*if choice_achieved_alleycat
+		Переулочный кот
+		*line_break
+	*if choice_achieved_bagger
+		Собиратель
+		*line_break
+	*if choice_achieved_blood_leech
+		Кровавый пиявка
+		*line_break
+	*if choice_achieved_vegan
+		Веган
+		*line_break
+	*if choice_achieved_farmer
+		Фермер
+		*line_break
+	*if choice_achieved_sandman
+		Песочный человек
+		*line_break
+	*if choice_achieved_scene_queen
+		Королева сцены
+		*line_break
+	*if choice_achieved_siren
+		Сирена
+		*line_break
+	*if choice_achieved_messy
+		Хаотичный
+		*line_break
+	*if choice_achieved_cleaner
+		Чистильщик
+		*line_break
+	*if choice_achieved_philosopher
+		Философ
+		*line_break
+	*if choice_achieved_paragon
+		Парагон
+		*line_break
+	*if choice_achieved_masquerade
+		Маскарад
+		*line_break
+	*if choice_achieved_regnant
+		Регнант
+		*line_break
+	*if choice_achieved_amaranth
+		Амарант
+		*line_break
+	*if choice_achieved_inchoate_metamorphosis
+		Незавершенная метаморфоза
+		*line_break
+	*if choice_achieved_ward_shadow
+		Тень стража
+		*line_break
+	*if choice_achieved_saboteur
+		Саботажник
+		*line_break
+	*if choice_achieved_liberator
+		Освободитель
+		*line_break
+	*if choice_achieved_good_shepherd
+		Добрый пастырь
+		*line_break
+	*if choice_achieved_toxic_intel
+		Токсичная разведка
+		*line_break
+	*if choice_achieved_sword_of_prometheus
+		Меч Прометея
+		*line_break
+	*if choice_achieved_door_to_beyond
+		Дверь в запределье
+		*line_break
+
+	*if si_already_attacked
+		Маскарад провален один раз
+		*line_break
+
+	*temp destroyed_at_all false
+
+	*if destroyed_in_raid
+		Уничтожен в рейде
+		*set destroyed_at_all true
+		*line_break
+
+	*if destroyed_in_11
+		Уничтожен в финальной главе
+		*set destroyed_at_all true
+		*line_break
+
+	*if destroyed_in_second_si_attack
+		Уничтожен во втором рейде SI
+		*set destroyed_at_all true
+		*line_break
+
+	*if consumed_by_beast
+		Поглощен Зверем
+		*set destroyed_at_all true
+		*line_break
+
+	Итоговая судьба:
+	*if destroyed_at_all
+		Уничтожен
+	*else
+		Выжил
+	*line_break
+
+	*if destroyed_in_raid or destroyed_in_second_si_attack
+		Уничтожен из-за нарушения Маскарада
+		*line_break
+
+	*temp victory false
+
+	Успех/провал миссии Вайпер:
+	*if camarilla_ending = "victory"
+		Победа Камарильи
+		*set victory true
+	*if camarilla_ending = "failure"
+		Провал Камарильи
+	*line_break
+
+	*if julian_ending = "victory"
+		Победа Джулиана
+		*set victory true
+	*if julian_ending = false
+		Провал Джулиана
+	*line_break
+
+	Итоговая концовка:
+	*if dallas_ending = "good"
+		Хорошая концовка Далласа
+		*set ending_type "good"
+	*if dallas_ending = "ok"
+		Нормальная концовка Далласа
+		*set ending_type "ok"
+	*if dallas_ending = "bad"
+		Плохая концовка Далласа
+		*set ending_type "bad"
+	*line_break
+
+	*if denver_ending = "good"
+		Хорошая концовка Денвера
+		*set ending_type "good"
+	*if denver_ending = "ok"
+		Нормальная концовка Денвера
+		*set ending_type "ok"
+	*if denver_ending = "bad"
+		Плохая концовка Денвера
+		*set ending_type "bad"
+	*line_break
+
+	*if san_francisco_ending = "good"
+		Хорошая концовка Сан-Франциско
+		*set ending_type "good"
+	*if san_francisco_ending = "ok"
+		Нормальная концовка Сан-Франциско
+		*set ending_type "ok"
+	*if san_francisco_ending = "bad"
+		Плохая концовка Сан-Франциско
+		*set ending_type "bad"
+	*line_break
+
+	*if seattle_ending = "good"
+		Хорошая концовка Сиэтла
+		*set ending_type "good"
+	*if seattle_ending = "ok"
+		Нормальная концовка Сиэтла
+		*set ending_type "ok"
+	*if seattle_ending = "bad"
+		Плохая концовка Сиэтла
+		*set ending_type "bad"
+	*line_break
+
+	Итоговый результат:
+	*if victory
+		Победа
+	*else
+		Поражение
+	*line_break
+
+	*if ending_type = "good"
+		Хорошая концовка
+	*elseif ending_type = "ok"
+		Нормальная концовка
+	*elseif ending_type = "bad"
+		Плохая концовка
+	*else
+		Уничтожен
+	*line_break
+
+*page_break End
+Мы надеемся, что вам понравилось играть в [i]Vampire: The Маскарад — Night Road.[/i]
+
+*feedback
+
+Choice of Games регулярно выпускает новые игры, подобные этой. Пожалуйста, подпишитесь на нашу рассылку, чтобы получать последние новости о других предстоящих играх, лицензированных World of Darkness.
+*subscribe
+*page_break
+
+Спасибо за игру!
+
+*ending

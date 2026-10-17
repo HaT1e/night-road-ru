@@ -1,0 +1,41 @@
+*comment Checks predator styles to see if you get an achievement.
+*label alleycat
+*set vegan_possible false
+*set alleycat_hunts +1
+*check_achievements
+*if ( choice_achieved_alleycat = false ) and ( alleycat_hunts > 2 )
+	*achieve alleycat
+*return
+*label bagger
+*set bagger_hunts +1
+*check_achievements
+*if ( choice_achieved_bagger = false ) and ( bagger_hunts > 2 )
+	*achieve bagger
+*return
+*label farmer
+*set farmer_hunts +1
+*check_achievements
+*if ( choice_achieved_farmer = false ) and ( farmer_hunts > 2 )
+	*achieve farmer
+*return
+*label sandman
+*set vegan_possible false
+*set sandman_hunts +1
+*check_achievements
+*if ( choice_achieved_sandman = false ) and ( sandman_hunts > 2 )
+	*achieve sandman
+*return
+*label scene_queen
+*set vegan_possible false
+*set scene_queen_hunts +1
+*check_achievements
+*if ( choice_achieved_scene_queen = false ) and ( scene_queen_hunts > 2 )
+	*achieve scene_queen
+*return
+*label siren
+*set vegan_possible false
+*set siren_hunts +1
+*check_achievements
+*if ( choice_achieved_siren = false ) and ( siren_hunts > 2 )
+	*achieve siren
+*return

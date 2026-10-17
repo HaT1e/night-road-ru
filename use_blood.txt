@@ -1,0 +1,54 @@
+*label use_blood
+*if ( generation <= 7 ) and ( generation_7_used = false )
+	*set generation_7_used true
+	*return
+*elseif ( generation <= 8 ) and ( generation_8_used = false )
+	*set generation_8_used true
+	*return
+*elseif ( generation <= 9 ) and ( generation_9_used = false )
+	*set generation_9_used true
+	*return
+*elseif ( generation <= 10 ) and ( generation_10_used = false )
+	*set generation_10_used true
+	*return
+*elseif ( has_garnet_ring ) and ( garnet_ring_used = false )
+	*if need_to_learn_about_ring = false
+		*set garnet_ring_used true
+		*return
+	*else
+		*goto increase_hunger
+*else
+	*label increase_hunger
+	*set hunger +1
+	*return
+*label gray_face
+*if hunger = 5
+	*if health > 1
+		*set health -1
+	*else
+		*set willpower 0
+	*return
+*else
+	*goto use_blood
+*label drink
+*if hunger > 1
+	*set hunger 1
+*set garnet_ring_used false
+*set generation_7_used false
+*set generation_8_used false
+*set generation_9_used false
+*set generation_10_used false
+*return
+*label drink_fully
+*set hunger 0
+*set garnet_ring_used false
+*set generation_7_used false
+*set generation_8_used false
+*set generation_9_used false
+*set generation_10_used false
+*return
+*label bite_drink
+*set vegan_possible false
+*if hunger > 0
+	*set hunger -1
+*return

@@ -1,0 +1,15 @@
+*check_purchase adfree
+*if choice_purchased_adfree or not(choice_purchase_supported)
+	*label purchased
+	*return
+Помните, как раньше мы говорили, что первые четыре главы доступны бесплатно? Это конец бесплатного контента.
+
+*if choice_prerelease and choice_is_web
+	Вы можете [url=https://store.steampowered.com/app/1290270/Vampire_The_Masquerade__Night_Road/]добавить в список желаемого на Steam[/url] или [url=https://play.google.com/store/apps/details?id=com.choiceofgames.nightroad]предварительно зарегистрироваться в Google Play[/url] сейчас!
+
+	*subscribe {"allowContinue": false}
+
+[i]Чтобы узнать, что будет дальше, пожалуйста, приобретите оставшиеся главы.[/i]
+
+*purchase_discount adfree 2021-11-01 $11.99 $7.99 purchased
+*abort

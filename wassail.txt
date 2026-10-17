@@ -1,0 +1,69 @@
+*if near_wight
+	*page_break
+
+	Твой Зверь поднимается.
+
+	И тогда мир становится лишь кровью, резней и яростью. На мгновение ты открываешь глаза на более молодой мир, ночное небо пустыни. И … город под луной. А затем ты видишь добычу вокруг себя. Человеческую добычу. И ты бежишь в этот город, и убиваешь, и убиваешь. И ты знаешь дикую радость.
+
+	И ты — свой Зверь.
+
+	*set consumed_by_beast true
+
+	*goto_scene ending
+*else
+	*set near_wight true
+
+	*page_break
+
+	Твой Зверь поднимается.
+
+	На мгновение твой мир — это лишь кровь, резня и ярость. Затем появляется новый мир, древний мир. Звезды выглядят моложе.
+
+	Ты слышишь язык, которого не знаешь. Женщины в мантиях помогают тебе подняться. Ты в цепях.
+
+	Нет, не язык, которого ты не знаешь. Ты вообще не говоришь на языках. Но ты слушаешь и пытаешься вспомнить.
+
+	"Как долго это было, Дочь Хаким?" — спрашивает мужской голос. Его темное лицо — лицо юноши. Ты знаешь, что ему тысяча лет.
+
+	"Как долго ты бродила по этим пустошам, Аила?"
+
+	Ты рычишь и бросаешься на него, а он не вздрагивает.
+
+	"Ты пала очень, очень низко, мое дитя", — говорит он. "Мы должны восстановить тебя. Это начинается сегодня. И это будет больно."
+
+	*page_break
+
+	Ты отбрасываешь своего Зверя назад. Он рычит и кричит, бессмысленная и испуганная тварь. Когда он отступает, он уносит с собой изрядную часть тебя. Но ты все еще ты. Не Аила. Не Зверь. Ты. Ты открываешь глаза.
+
+	*page_break
+
+*set tried_caregiver true
+*set tried_penitent true
+*set tried_rebel true
+*set tried_materialist true
+*set tried_traditionalist true
+*set tried_visionary true
+
+*set caregiver_conviction false
+*set penitent_conviction false
+*set rebel_conviction false
+*set materialist_conviction false
+*set traditionalist_conviction false
+*set visionary_conviction false
+
+*comment Permanently fries your ability to gain or retain any Convictions except Браво and Выживальщик
+
+*set humanity 1
+
+*if intelligence > 1
+	*set intelligence -1
+*elseif composure > 1
+	*set composure -1
+*elseif charisma > 1
+	*set charisma -1
+*else
+	*set resolve -1
+	*if resolve = 0
+		*set resolve 1
+
+*return

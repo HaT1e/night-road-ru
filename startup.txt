@@ -1,0 +1,1543 @@
+*title Vampire: The Маскарад — Night Road
+*author Kyle Marquis
+
+*scene_list
+	startup
+	1_just_getting_by
+	2_into_the_sunset
+	3_eagle_prince
+	4_hospital
+	5_migrant_camp
+	6_ranch
+	$ 7_halfway_to_dawn
+	$ 8_biosphere
+	$ 9_club
+	$ 10_deep_desert
+	$ 11_the_road
+	$secretsandshadows auction
+	blood_mend
+	buy
+	car_warmup
+	corpse_disposal
+	date_calculator
+	difficulty_calculator
+	dots_calculator
+	examine
+	explain
+	si_attack
+	willpower
+	last_three_intros
+	last_three_outros
+	learn_about_race
+	masquerade_breach
+	plan_drive
+	predator_style_check
+	race
+	$secretsandshadows ravnos
+	standard_mods
+	talk_to_elena
+	tucson
+	use_blood
+	wassail
+	wolf
+	zero_hp
+
+*create implicit_control_flow true
+*create testing_mode false
+
+*create em false
+*comment Controls "easy mode" aka "Storyteller mode"
+*create digit false
+*comment Controls "digit mode" for visually impaired players
+*create obob "[Затемнение]"
+*create obpres "[Присутствие]"
+*comment Switches between Затемнение and Забвение or Присутствие and Забвение
+
+*comment SKIN VARIABLES
+*create name "undetermined"
+
+*create gender "undetermined"
+*create son_daughter "undetermined"
+*create he_she "undetermined"
+*create him_her "undetermined"
+*create mr_miss "undetermined"
+*create man_woman "человек"
+*create boy_girl "undetermined"
+*create his_her "undetermined"
+*create himself_herself "undetermined"
+*create handsome_beautiful "undetermined"
+*create guy_girl "undetermined"
+*create sir_maam "undetermined"
+*create man_miss "undetermined"
+*create lady_gentleman "undetermined"
+
+*comment OVER THE SKIN VARIABLES
+
+*create outfit "старая одежда"
+*create watch "сломанные часы"
+*create watch_long "сломанные Casio Illuminator"
+*create footwear "убитые ботинки"
+*create bag "поцарапанная сумка"
+*create coat "undetermined"
+*create hat "undetermined"
+
+*comment Attributes
+
+*create strength 1
+*create dexterity 1
+*create stamina 1
+
+*create charisma 1
+*create manipulation 1
+*create composure 1
+
+*create intelligence 1
+*create wits 1
+*create resolve 1
+
+*comment Skills
+
+*create athletics 0
+*create clandestine 0
+*create combat 0
+*create drive 1
+*create firearms 0
+
+*create intimidation 0
+*create leadership 0
+*create persuasion 0
+*create streetwise 0
+*create subterfuge 0
+
+*create academics 0
+*create awareness 0
+*create investigation 0
+*create survival 0
+*create technology 0
+
+*comment Modified skills
+
+*create gunfight 0
+*comment Equal to firearms unless you upgrade your gun
+*create swordfight 0
+*comment Equal to combat unless you upgrade your sword
+
+*comment Disciplines
+
+*create animalism 0
+*create auspex 0
+*create blood_sorcery 0
+*create celerity 0
+*create dominate 0
+*create fortitude 0
+*create obfuscate 0
+*create oblivion 0
+*create potence 0
+*create presence 0
+*create protean 0
+
+*create started_with_oblivion false
+
+*comment Bonuses when Disciplines are activated based on how often different Disciplines are available:
+*comment Анимализм +4 Прорицание +3 Кровавая магия +4 Стремительность +2 Доминирование +4 Забвение +3 Затемнение +3 Могущество +3 Присутствие +3 Превращение +4
+
+*create animalism_unlocked false
+*create auspex_unlocked false
+*create blood_sorcery_unlocked false
+*create celerity_unlocked false
+*create dominate_unlocked false
+*create fortitude_unlocked false
+*create obfuscate_unlocked false
+*create oblivion_unlocked false
+*create potence_unlocked false
+*create presence_unlocked false
+*create protean_unlocked false
+*comment Clan determines starting Disciplines. After that you can train with other vampires after drinking их blood to unlock further Disciplines.
+
+*create ancestral_oblivion false
+*comment Your Забвение Discipline has an "ancestral" vibe if you're Геката or learn from a Геката
+*create serpentis false
+*comment A Превращение variant if you're a Minister or drink from one
+
+*comment Convictions & Personality Traits
+
+*create conviction "undetermined"
+*create convictions 0
+
+*create bravo 50
+*comment Opposite of Заботливый
+*create penitent 50
+*comment Opposite of Выживальщик
+*create traditionalist 50
+*comment opposite of Бунтарь
+*create materialist 50
+*comment opposite of Визионер
+
+*create bravo_conviction false
+*create caregiver_conviction false
+*create penitent_conviction false
+*create survivor_conviction false
+*create rebel_conviction false
+*create materialist_conviction false
+*create traditionalist_conviction false
+*create visionary_conviction false
+
+*create tried_bravo false
+*create tried_caregiver false
+*create tried_penitent false
+*create tried_survivor false
+*create tried_rebel false
+*create tried_materialist false
+*create tried_traditionalist false
+*create tried_visionary false
+*create no_bravo_conviction false
+*create no_caregiver_conviction false
+*create no_penitent_conviction false
+*create no_survivor_conviction false
+*create no_traditionalist_conviction false
+*create no_rebel_conviction false
+*create no_materialist_conviction false
+*create no_visionary_conviction false
+*comment Prevents you from having to "turn down" a potential Conviction more than once
+
+*create final_goal "undetermined"
+*comment Your final Камарилья/Анарх/penitence/independence choice
+
+*comment Experience Points
+
+*create xp 0
+
+*create strength_xp 0
+*create dexterity_xp 0
+*create stamina_xp 0
+
+*create charisma_xp 0
+*create manipulation_xp 0
+*create composure_xp 0
+
+*create intelligence_xp 0
+*create wits_xp 0
+*create resolve_xp 0
+
+*create athletics_xp 0
+*create clandestine_xp 0
+*create combat_xp 0
+*create drive_xp 0
+*create firearms_xp 0
+
+*create intimidation_xp 0
+*create leadership_xp 0
+*create persuasion_xp 0
+*create streetwise_xp 0
+*create subterfuge_xp 0
+
+*create academics_xp 0
+*create awareness_xp 0
+*create investigation_xp 0
+*create technology_xp 0
+*create survival_xp 0
+
+*create animalism_xp 0
+*create auspex_xp 0
+*create blood_sorcery_xp 0
+*create celerity_xp 0
+*create dominate_xp 0
+*create fortitude_xp 0
+*create obfuscate_xp 0
+*create oblivion_xp 0
+*create potence_xp 0
+*create presence_xp 0
+*create protean_xp 0
+
+*comment dots
+
+*create strength_dots "○○○○○"
+*create dexterity_dots "○○○○○"
+*create stamina_dots "○○○○○"
+*create charisma_dots "○○○○○"
+*create manipulation_dots "○○○○○"
+*create composure_dots "○○○○○"
+*create intelligence_dots "○○○○○"
+*create wits_dots "○○○○○"
+*create resolve_dots "○○○○○"
+*create athletics_dots "○○○"
+*create combat_dots "○○○"
+*create drive_dots "○○○"
+*create firearms_dots "○○○"
+*create clandestine_dots "○○○"
+*create intimidation_dots "○○○"
+*create leadership_dots "○○○"
+*create persuasion_dots "○○○"
+*create streetwise_dots "○○○"
+*create subterfuge_dots "○○○"
+*create academics_dots "○○○"
+*create awareness_dots "○○○"
+*create investigation_dots "○○○"
+*create technology_dots "○○○"
+*create survival_dots "○○○"
+*create animalism_dots "○○○"
+*create auspex_dots "○○○"
+*create blood_sorcery_dots "○○○"
+*create celerity_dots "○○○"
+*create dominate_dots "○○○"
+*create fortitude_dots "○○○"
+*create obfuscate_dots "○○○"
+*create oblivion_dots "○○○"
+*create potence_dots "○○○"
+*create presence_dots "○○○"
+*create protean_dots "○○○"
+
+*create speed_dots "○○○○○"
+*create maneuverability_dots "○○○○○"
+*create durability_dots "○○○○○"
+
+*create bravo_dots "○○○|○○○"
+*create penitent_dots "○○○|○○○"
+*create traditionalist_dots "○○○|○○○"
+*create materialist_dots "○○○|○○○"
+
+*create structure_boxes "○"
+
+*create health_boxes "undetermined"
+*create humanity_dots "undetermined"
+*create hunger_boxes "undetermined"
+*create willpower_dots "undetermined"
+*create masquerade_boxes "undetermined"
+
+*comment Other Traits
+
+*create clan "undetermined"
+*create clan_slur "undetermined"
+*create a_clan_slur "undetermined"
+*create low_clan true
+
+*create sire "undetermined"
+*create sire_he_she "она"
+*create useful_sire true
+*comment If false, Джулиан replaces your sire during training flashbacks
+
+*create restriction "undetermined"
+*comment Feeding restriction; only applies to Вентру
+
+*create generation 11
+*create generation_10_used false
+*create generation_9_used false
+*create generation_8_used false
+*create generation_7_used false
+*comment Generations are "used" instead of gaining Голод when you're of 10th Поколение or lower
+
+*create false_clan "undetermined"
+*create false_clan_slur "undetermined"
+*create a_false_clan_slur "undetermined"
+*comment The clan you pass as if you're Каитифф or Бану Хаким
+
+*create humanity 4
+*create near_wight false
+*comment If you hit Человечность 0 you "bounce off" once and recover, unable to gain convictions (see wassail.txt); if you do it again the game ends.
+*create hunger 1
+*create blood 0
+*comment "Кровь" is just (5-hunger) and makes some of the math clearer
+*create mess 0
+*comment "Mess" determines how likely you are to suffer from a messy critical
+
+*create health 1
+*create max_health 4
+
+*create agg false
+*comment You can't mend regular injuries until you remove your aggravated damage, which takes time, Кровь, and Сила воли
+
+*comment WILLPOWER
+
+*comment Spend Сила воли to become focused, ignore frenzy, and avoid messy criticals
+
+*create max_willpower 0
+*create willpower 0
+*create drank_vitae_as_banu_haqim false
+*create regained_willpower false
+*comment Shunts you to the willpower/conviction scene if false
+
+*create hunger_frenzy false
+*create rage_frenzy false
+*create focused false
+*create hunger_penalty 0
+*create human_penalty 0
+
+*create claws_out false
+*create fangs_out false
+*create beast_form false
+*comment Tracks your Превращение status
+
+*create call_drain false
+*comment Penalizes you for having no Сила воли and still contacting Джулиан
+
+*comment Inventory
+
+*create has_phone false
+*create has_gun false
+*create has_better_gun false
+*create gun "undetermined"
+*create has_sword false
+*create sword "undetermined"
+*create has_better_sword false
+*create has_laptop false
+*create has_infiltration_kit false
+*create has_suit false
+*create suit "undetermined"
+*create has_garnet_ring false
+*create has_courier_gear false
+*create has_hat false
+*create has_cat_mask false
+
+*create has_black_apollo false
+*create has_cassandra false
+*create has_pocketwatch false
+*create has_microscope false
+*create has_fetter false
+*create has_ming_xiao false
+*create has_haven_coin false
+*create has_edouard_grimoires false
+
+*comment Inventory-adjacent variables
+
+*create garnet_ring_used false
+*create considered_garnet_ring false
+*create controlled_by_ring false
+*create need_to_learn_about_ring false
+
+*create gave_elena_cassandra false
+
+*create gun_confiscated false
+*create can_make_infiltration_kit false
+
+*create black_apollo_examined false
+*create can_use_black_apollo false
+*create black_apollo_active false
+
+*create ming_xiao_examined false
+
+*create sword_pearl false
+*create gun_pearl false
+
+*comment Транспорт Stats
+
+*create car "undetermined"
+*create car_short "undetermined"
+*create a_car_short "undetermined"
+*create car_type "легковая"
+
+*create loaner_car false
+
+*create car_seats 0
+*create base_car_resale 0
+*create car_resale 0
+*create car_upkeep 0
+
+*create car_speed 0
+*create car_maneuverability 0
+*create car_durability 0
+
+*create speed_upgraded false
+*create maneuverability_upgraded false
+*create durability_upgraded false
+
+*create first_car "undetermined"
+
+*create max_car_structure 0
+*create car_structure 0
+
+*comment Транспорт Details
+
+*create examined_rx_7 false
+*create examined_integra false
+*create examined_saab false
+*create examined_tacoma false
+*create examined_300zx false
+
+*create examined_fiat false
+*create examined_supra false
+*create examined_ranger false
+*create examined_tt false
+
+*create examined_escalade false
+*create examined_rx_350 false
+*create examined_s_class false
+*create examined_porsche false
+*create examined_mustang false
+*create examined_383 false
+
+*create examined_islero false
+*create examined_gt_r false
+*create examined_i8 false
+
+*create owned_rx_7 false
+*create owned_integra false
+*create owned_saab false
+*create owned_tacoma false
+*create owned_300zx false
+
+*create owned_fiat false
+*create owned_supra false
+*create owned_ranger false
+*create owned_tt false
+
+*create owned_escalade false
+*create owned_rx_350 false
+*create owned_s_class false
+*create owned_porsche false
+*create owned_mustang false
+*create owned_383 false
+
+*create owned_islero false
+*create owned_gt_r false
+*create owned_i8 false
+
+*comment Loaner cars
+*create owned_aztek false
+*create owned_hilux false
+*create owned_pt_cruiser false
+*create owned_sebring false
+*create owned_cutlass_supreme false
+*create owned_vauxhall false
+*create owned_uplander false
+*create owned_nitro false
+*create owned_century false
+*create owned_camry false
+*create owned_lumina false
+*create owned_explorer false
+*create owned_geo_metro false
+
+*create owned_monaco false
+
+*create already_got_loaner false
+
+*comment Убежище Stats
+
+*create haven "undetermined"
+*create haven_level 1
+*create haven_resale 0
+*create havens_owned 0
+
+*create examined_bungalow false
+*create examined_two_bedroom false
+*create examined_mission false
+*create examined_penthouse false
+
+*create owned_bungalow false
+*create owned_two_bedroom false
+*create owned_mission false
+*create owned_penthouse false
+
+*comment Secondary Variables
+
+*create masquerade 3
+*create camarilla 50
+*create julian 50
+*create si 50
+
+*create wealth 3
+*create upkeep 100
+*create assets 0
+*create mobile_assets 0
+*comment "Mobile assets" replace "assets" toward the end of the game when you need to get out of town.
+
+*comment WOLF VARIABLES
+
+*create has_wolf false
+*create wolf "undetermined"
+*create wolf_he_she "они"
+*create wolf_him_her "их"
+*create wolf_his_her "их"
+*create wolf_himself_herself "себя"
+*create wolf_boy_girl "волк"
+
+*comment NPC VARIABLES
+
+*create met_donati false
+*create glimpse_donati false
+*create just_met_donati false
+*create met_millicent false
+*create met_julian false
+*create met_lettow false
+*create met_dove false
+*create met_despine false
+*create met_caul false
+*create met_elin false
+*create met_pattermuster false
+
+*create know_about_first_three false
+
+*create julian_romance "undetermined"
+*create lettow_romance "undetermined"
+*create dove_romance "undetermined"
+*create dove_location_clues false
+
+*create took_chrysler false
+
+*create julian_blood_bond 0
+*create lettow_blood_bond 0
+*create compelled false
+
+*create dove_rejections 0
+*create can_drive_with_dove false
+*create drove_with_dove false
+
+*create kissed_julian false
+*create kissed_lettow false
+
+*create met_imran false
+
+*create nilay_alive true
+*create linda_alive true
+*create imran_alive true
+
+*create julian_rescued_you false
+
+*create met_aliette false
+*create met_rainer false
+*create met_radu false
+*create met_vani false
+
+*comment Паттермустер
+*create pattermuster_rel "undetermined"
+*create pattermuster_alive true
+
+*comment Кол
+*create caul_rel "undetermined"
+*create caul_alive true
+*create caul_joins_julian false
+
+*comment Olivecrona
+*create olivecrona_rel "undetermined"
+*create olivecrona_alive true
+
+*comment Эдуар
+*create robbed_edouard false
+*create investigated_edouard false
+*create met_edouard false
+*create met_edouard_at_lampago_lair false
+*create met_edouard_with_raul false
+*create edouard_alive true
+*create know_about_edouard false
+*create give_edouard_to_julian false
+*create saw_edouard_pic false
+
+*comment GHOUL VARIABLES
+
+*create ghoul "undetermined"
+*create ghoul_house "undetermined"
+*create ghoul_romance_location false
+*comment Becomes true when you can romance your ghoul, disappears once you've done so.
+*create ghoul_romance false
+*create kissed_ghoul false
+*create fed_from_ghoul false
+*create slept_with_ghoul false
+
+*create ghoul_adventures 0
+*create ghoul_activities_all_done false
+*create ghoul_activities_all_done_known false
+*comment Controls when you can go on short ghoul adventures in tucson and talk_to_elena
+
+*create ghoul_he_she "undetermined"
+*create ghoul_his_her "undetermined"
+*create ghoul_him_her "undetermined"
+*create ghoul_himself_herself "undetermined"
+*create ghoul_car "undetermined"
+*create ghoul_car_short "undetermined"
+*create a_ghoul_car "undetermined"
+
+*create vani_ally false
+*create elena_ally false
+*create tried_elena_alliance false
+*create potential_raul_ally false
+*create raul_ally false
+*create raul_hostile false
+
+*create has_elena_number false
+*create meet_mobsters false
+
+*create met_elena true
+*create refuse_to_help_elena false
+
+*create raul_alive true
+*create vani_alive true
+
+*comment Гуль activities
+*create ghoul_camarilla_plan false
+*create ghoul_date_plan false
+*create ghoul_money_plan false
+*create ghoul_science_plan false
+*create ghoul_si_plan false
+*create ghoul_activity_available true
+*comment Becomes false when you do an activity, then true again when you finish another main chapter. This prevents you from doing all the ghoul activities all at once.
+*create multiple_ghoul_visit false
+
+*create ghoul_camarilla_mission_complete false
+*create ghoul_money_mission_complete false
+*create ghoul_science_mission_complete false
+*create ghoul_si_mission_complete false
+*create ghoul_date_complete false
+*comment Prevents you from doing various ghoul-missions more than once.
+
+*create ghoul_fun_offer false
+*create ghoul_cash false
+
+*comment MASQUERADE VARIABLES
+
+*create masquerade_blown false
+
+*create masquerade_repaired false
+
+*create base_masquerade_repair_cost 1000
+*create masquerade_repair_cost 2000
+*create presence_masquerade_repair_cost 2000
+
+*create repair_masquerade_negotiated false
+
+*create presence_gila_monster false
+*create dominate_gila_monster false
+
+*comment DIFFICULTY VARIABLES
+
+*create easy 1
+*create moderate 3
+*create hard 5
+*create very_hard 7
+*create damage 1
+
+*comment EXPLAINER VARIABLES
+
+*create agg_explained false
+*create blood_explained false
+*create focus_explained false
+*create masquerade_explained false
+*create masquerade_at_1_explained false
+*create mess_explained false
+*create humanity_explained false
+*create repair_masquerade_explained false
+*create abandoned_building_explained false
+*create ventrue_explained false
+*create banu_haqim_explained false
+*create hunger_frenzy_explained false
+*create rage_frenzy_explained false
+*create explained_repair_usefulness false
+*create storyteller_mode_explained false
+
+*comment RAVNOS VARIABLES
+
+*create chimerstry false
+*create can_learn_chimerstry false
+*create chimerstry_unlocked false
+
+*create just_checked_chimerstry false
+
+*create ravnos_solution "undetermined"
+
+*create describe_ravnos_breakins false
+*create describe_ravnos_hotels false
+*create describe_ravnos_julian false
+*create describe_ravnos_wilds false
+*create describe_ravnos_streets false
+
+*create need_new_place_to_stay false
+*create donati_ravnos_choice false
+
+*create ravnos_cost 0
+*create previous_camarilla_score 0
+*create considered_apartment_rotation false
+*comment These all track how much multiple apartments cost
+
+*create describe_ravnos_madrigal false
+
+*comment VARIABLES USED TO TRACK CHAPTER/MISSION PROGRESSION
+
+*create hospital_done false
+*create migrant_camp_done false
+*create ranch_done false
+
+*create biosphere_done false
+*create club_done false
+*create deep_desert_done false
+
+*create missions 0
+*create finished_caul_mission false
+
+*create news false
+*create news_desc "undetermined"
+
+*comment PREDATOR STYLE VARIABLES
+
+*create alleycat_hunts 0
+*create bagger_hunts 0
+*create farmer_hunts 0
+*create sandman_hunts 0
+*create scene_queen_hunts 0
+*create siren_hunts 0
+
+*create prey "undetermined"
+*comment Changes as you hunt different kinds of people
+*create preference "undetermined"
+*comment Sexual preference, for sirens
+*create prey_him_her "её"
+*create prey_he_she "она"
+*create prey_his_her "её"
+*create prey_man_woman "женщина"
+
+*create prey_kills 0
+*create prey_bluffs 0
+*create prey_threats 0
+*create prey_flights 0
+*create prey_dominations 0
+*comment Prevents you from performing the same action to deal with Маскарад violations too many times.
+
+*create medical_disposal_attempts 0
+*create streetwise_disposal_attempts 0
+*create drive_disposal_attempts 0
+*create athletics_disposal_attempts 0
+*create investigation_disposal_attempts 0
+*create larceny_disposal_attempts 0
+*create ritual_disposal_attempts 0
+*comment Limits how many times you can use the same trick to get rid of a corpse.
+
+*create prey_town "undetermined"
+
+*comment CHOICESCRIPT_STATS
+
+*create page "undetermined"
+*create untrained_hidden false
+*create creation_done false
+
+*comment CHAPTER 1
+
+*create elysium_blood_boost false
+*create elysium_cars_boost false
+*create elysium_gear_boost false
+*create use_open_window false
+*create skill_pack "undetermined"
+*create fought_alongside_radu false
+*create carelli_known false
+*create ghoul_defined false
+*create nilay_fate "undetermined"
+
+*create wheelcorpse false
+
+*comment CHAPTER 2
+
+*create abandoned_watering false
+*create wight_alive true
+*create reremouse_mentioned false
+*create ditched_julian false
+
+*comment CHAPTER 3
+
+*create lettow_lore false
+*create first_feed "undetermined"
+*create julian_rel "neutral"
+*create camarilla_rel "neutral"
+*create angered_julian false
+*create met_111 false
+*create si_mentioned false
+*create aila_mentioned false
+*create met_carlos false
+*create carlos_at_cavoletti false
+*create know_about_miguel false
+*create see_miguel false
+*create miguel_death "undetermined"
+*create miguel_drained false
+*create lampago_mentioned false
+*create despine_mentioned false
+*create julian_phone_trick false
+
+*comment RANCH
+
+*create gun_stored false
+*create sword_stored false
+*create saw_karambit false
+*create occultists_alive true
+*create know_about_dragonbreath false
+*create caul_faked_death false
+*create laptop_and_phone_confiscated false
+*create see_rat_nest false
+*create caul_secrets 0
+*create tried_caul_recipe false
+*create has_invidia_grimoires false
+*create learn_from_invidia_grimoires false
+*create learn_from_edouard_grimoires false
+*create saw_giselle_pic false
+
+*comment HOSPITAL
+
+*create saw_motel_6 false
+*create visit_motel_6 false
+*create roadrunner_known false
+*create know_about_drugs false
+*create car_obviously_damaged false
+*create torpor_cause "undetermined"
+*create ghoul_in_office false
+*create guard_clues 0
+*create left_hospital_early false
+*create hospital_fate "undetermined"
+*create learned_from_pattermuster false
+*create xp_penalty false
+*create xp_penalty_reminder false
+*create car_already_lost false
+
+*comment MIGRANT CAMP
+
+*create extracted 0
+*create camp_data_fate "undetermined"
+*create see_gangrel false
+*create met_gangrel false
+*create camp_scheffler_evacuated false
+*create hurry_answer false
+*create visit_storage_facility false
+*create saw_millicent_pic false
+*create drove_old_ford false
+
+*comment RACE
+
+*create race_target "undetermined"
+*create delivery "undetermined"
+*create race_anchor "undetermined"
+*comment Solves the loop problem
+
+*create airplane_mission_success false
+*create airstrip_state "глушь"
+*create never_reached_airfield false
+*create find_shelter "undetermined"
+*create failed_shelter_once false
+
+*create shelter_leadership false
+*create shelter_survival false
+*create shelter_streetwise false
+*create shelter_subterfuge false
+*create shelter_etiquette false
+*create shelter_awareness false
+*create shelter_larceny false
+*create shelter_academics false
+*create shelter_technology false
+*create shelter_ritual false
+
+*create ritual_considered false
+*create julian_shelter_uses 0
+
+*comment TUCSON
+
+*create fought_giselle false
+
+*create spot_brigit false
+*create met_brigit_at_phone false
+*create met_brigit_at_gila_monster false
+*create fought_brigit false
+*create mangled_brigit false
+
+*create noted_hospital_money false
+*create destroyed_in_raid false
+*create destroyed_in_second_si_attack false
+*create consumed_by_beast false
+*create saw_nadia_pic false
+
+*create hecata_needles_explained false
+
+*comment Серое Лицо
+*create tucson_nosferatu_hassle_described false
+*create tucson_gray_face_active false
+
+*comment Nightclubs
+*create snapdragon_described false
+*create viper_open true
+*create discovered_elysium_flaws false
+*create met_z false
+*create z_damaged false
+*create alexander_alive false
+*create met_alexander false
+*create good_car_story false
+
+*comment Misc
+*create security_note false
+*create real_estate_person_talks_security false
+*create can_use_sorcerous_security false
+*create know_about_bills_risk false
+*create corbeau_left false
+*create halden_just_killed false
+*create need_motor_skills false
+*create wolf_active false
+
+*create mission_reminder false
+*comment Organizes which missions you already know about.
+
+*comment Alien Кровь
+
+*create investigated_vial false
+*create formula_uses 0
+*create formula_enhancements 0
+*create dreams 0
+*create tried_2100 false
+*create artificially_lowered_generation false
+
+*comment AUCTION
+
+*create phonecall_adder 0
+*create phonecall_happens 0
+*create phonecall_already_happened false
+
+*create ask_ghoul_about_auction false
+
+*create trained_with_millicent false
+
+*create unaware_youre_not_brigit false
+
+*create brian "Ломейо"
+*create conjured_wraith false
+*create tried_to_understand_ceremony false
+*create understand_ceremony false
+
+*create used_clinging false
+
+*create examined_jaguar false
+*create can_afford_jaguar false
+*create asked_about_magic_items false
+
+*create just_did_auction false
+
+*create been_to_cavoletti false
+
+*create dove_explains_auction false
+*create chiara_explains_auction false
+*create chiara_explains_family_reunion false
+
+
+*create chiara "Chiara"
+*create chiara_name_change_known false
+
+*create auction_done false
+*create working_for_hecata false
+
+*create chiara_relationship "undetermined"
+
+*create final_auction_result "undetermined"
+
+*create auction_mission_available false
+
+*create can_learn_from_millicent false
+*create millicent_blood_promised false
+*create embarrassed_by_millicent false
+
+*create can_learn_from_chiara false
+*create can_learn_from_edouard false
+
+*create auction_payment 0
+*create cassandra_cost 0
+
+*create met_viktor false
+*create met_viktor_at_tanker false
+*create saw_viktor_at_club false
+
+*create saw_viktor_at_auction false
+*create saw_corbeau_at_auction_house false
+
+*comment Feeding
+
+*create blood_cost 0
+
+*create auto_feeding_desc "undetermined"
+*create auto_feedings 0
+*create feeding_desc_1 false
+*create feeding_desc_2 false
+*create feeding_desc_3 false
+*create feeding_desc_4 false
+*create feeding_desc_5 false
+*create feeding_desc_6 false
+*create feeding_desc_7 false
+*create feeding_desc_8 false
+*create feeding_desc_9 false
+*create feeding_desc_10 false
+*comment Variables for random automatic feedings in Тусон.
+
+*comment ENDGAME
+
+*create endgame false
+*create flashback false
+*create consider_mobile_assets false
+*create final_warning false
+*create final_radio_events 0
+*create riga_seen false
+
+*create final_feed "undetermined"
+*create alleycat_approach "violence"
+*create siren_approach "charm"
+*create bagger_approach "science"
+*create farmer_approach "hunt"
+*create sandman_approach "stealth"
+*create scene_queen_approach "elegance"
+
+*create asked_julian_about_2100 false
+*create endgame_mod 0
+
+*create final_news_desc "undetermined"
+*create final_news 0
+*create news_desc_1 false
+*create news_desc_2 false
+*create news_desc_3 false
+*create news_desc_4 false
+*create news_desc_5 false
+*create news_desc_6 false
+*create news_desc_7 false
+*create news_desc_8 false
+*create news_desc_9 false
+*create news_desc_10 false
+
+*comment ENDING CALCULATORS
+
+*create destroyed_in_11 false
+*create camarilla_ending "undetermined"
+*create julian_ending "undetermined"
+*create dallas_ending "undetermined"
+*create denver_ending "undetermined"
+*create san_francisco_ending "undetermined"
+*create seattle_ending "undetermined"
+*create end_with_lettow false
+*create ending_type "undetermined"
+
+*comment GHOUL MISSIONS
+
+*create giselle_defeated false
+*create cane_destroyed false
+
+*comment SI Hit
+
+*create si_already_attacked false
+
+*comment Очки опыта/Development
+
+*create animalism_explained false
+*create auspex_explained false
+*create blood_sorcery_explained false
+*create celerity_explained false
+*create dominate_explained false
+*create fortitude_explained false
+*create obfuscate_explained false
+*create oblivion_explained false
+*create potence_explained false
+*create presence_explained false
+*create protean_explained false
+
+*create xp_explained false
+*create lotta_xp_explained false
+
+*comment Messages and interactions
+
+*create raul_message false
+*create vani_message false
+*create raul_still_waiting false
+*create know_about_julian_bail false
+*create shook_off_before false
+
+*create first_next "Сначала"
+
+*comment Location visits
+*create visited_cottage false
+*create visited_covenant false
+*create visited_fine_motor false
+*create visited_used_cars false
+*create visited_raul false
+*create visited_vani false
+*create visited_corbeau false
+*create visited_franklin_street false
+*create visited_paragon false
+*create visited_viper false
+*create visited_haven false
+*create visited_madrigal false
+*create visited_bat false
+*create visited_snapdragon false
+
+*create visited_snapdragon_this_time false
+*create visited_used_cars_this_time false
+*create visited_paragon_this_time false
+*create visited_viper_this_time false
+*comment "this time" controls whether or not you get a new description of what's going on at the place
+
+*create madrigal_destroyed false
+*create madrigal_destruction_known false
+*create know_about_bat false
+*create know_about_hunting_rules false
+*create at_haven false
+
+*comment Silver knife lore
+*create clue_1 false
+*create clue_2 false
+
+*comment The Вторая Инквизиция
+
+*create fairlane_destroyed false
+*create already_attacked false
+
+*comment HALFWAY TO DAWN
+
+*create ready_for_halfway false
+*comment Becomes true when you complete the first three mission.
+*create halfway false
+*create viper_tricks 0
+*create spy_caught "искал"
+
+*create final_payment 5000
+*create julian_destroyed_warning false
+*create julian_alive true
+*create spy_alive true
+
+*comment COVENANT PAWN SHOP
+
+*create ch_3_fence_talk false
+*create elena_mod 0
+*create fence_talks 0
+
+*create price_reduction 0
+*create late false
+
+*create examined_swords false
+*create examined_guns false
+*create examined_laptop false
+*create examined_infiltration_kit false
+*create examined_suit false
+
+*create talked_to_elena false
+*create prices_reduced false
+
+*create price_reduction_intimidation false
+*create price_reduction_streetwise false
+*create price_reduction_academics false
+
+*create elena_ally_leadership false
+*create elena_ally_persuasion false
+
+*create refused_to_help_elena false
+
+*create tried_for_clues false
+
+*create elena_described_problem false
+
+*comment BIOSPHERE
+
+*create met_kase false
+*create antonio_alive true
+*create antonio_embraced false
+*create has_cache false
+*create julian_scanned_cache false
+*create met_lampago false
+
+*comment DEEP DESERT
+
+*create diablerized_reremouse false
+*create reremouse_goal "undetermined"
+*create reremouse_fate "undetermined"
+*create know_about_prometheus false
+
+*comment CLUB
+
+*create has_iou false
+*create despine_alive true
+*create nadia_alive true
+*create kase_alive true
+*create met_nadia false
+
+*create underling "Кейс"
+*create underling_he_she "он"
+*create underling_his_her "его"
+*create underling_him_her "его"
+*create underling_himself_herself "себя"
+*comment Kase replaces Надя if Надя dies.
+
+*create despine_case_scanned false
+
+*product adfree
+*product usurpersoutcasts
+*product secretsandshadows
+
+*create uobonus true
+*create uobonus_explained false
+
+*comment PRICES
+
+*comment Covenant Pawn Shop Costs
+
+*create base_gun_cost 400
+*create base_sword_cost 300
+*create base_laptop_cost 600
+*create base_suit_cost 450
+
+*create base_better_gun_cost 4500
+*create base_better_sword_cost 3500
+*create base_infiltration_kit_cost 2500
+
+*create gun_cost 0
+*create sword_cost 0
+*create laptop_cost 0
+*create suit_cost 0
+
+*create better_gun_cost 0
+*create better_sword_cost 0
+*create infiltration_kit_cost 0
+
+*comment Транспорт
+
+*create base_gt_cost 500
+*create base_s2000_cost 600
+*create base_bmw_3_cost 700
+*create base_frontier_cost 350
+
+*create base_integra_cost 900
+*create base_saab_cost 1800
+*create base_rx_7_cost 2500
+*create base_tacoma_cost 1300
+*create base_zx_cost 1400
+
+*create base_ranger_cost 5000
+*create base_tt_cost 6000
+*create base_supra_cost 7000
+
+*create base_s_class_cost 13000
+*create base_escalade_cost 14000
+*create base_porsche_cost 16000
+*create base_mustang_cost 19000
+*create base_challenger_cost 22000
+
+*create base_gt_r_cost 40000
+*create base_islero_cost 45000
+*create base_i8_cost 50000
+
+*create impala_cost 20000
+*create fiat_cost 10000
+*create datsun_cost 35000
+
+*create camaro_cost 40000
+*create syrena_cost 100000
+*create hispano_suiza_cost 100000
+
+*create ae_86_cost 10000
+*create lotus_cost 15000
+*create chrysler_cost 20000
+
+*create gt_cost 0
+*create s2000_cost 0
+*create bmw_3_cost 0
+*create frontier_cost 0
+
+*create integra_cost 0
+*create saab_cost 0
+*create rx_7_cost 0
+*create tacoma_cost 0
+*create zx_cost 0
+
+*create escalade_cost 0
+*create supra_cost 0
+*create ranger_cost 0
+*create tt_cost 0
+
+*create s_class_cost 0
+*create porsche_cost 0
+*create mustang_cost 0
+*create challenger_cost 0
+
+*create gt_r_cost 0
+*create islero_cost 0
+*create i8_cost 0
+*comment These all get *set in the tucson chapter
+
+*create base_jaguar_cost 12000
+
+*comment Other Транспорт Data
+
+*create midrange_cars false
+*create high_end_cars false
+*create best_cars false
+
+*create cheapest_car_cost 0
+
+*comment ACHIEVEMENTS AND ACHIEVEMENT VARIABLES
+
+*create disposals 0
+*create messy_criticals 0
+*create vegan_possible true
+
+*achievement alleycat visible 10 Alleycat
+	Избей кого-нибудь и возьми их кровь трижды
+
+*achievement bagger visible 50 Bagger
+	Пей кровь из пакетов трижды
+
+*achievement blood_leech visible 10 Кровь Leech
+	Питайся от другого вампира
+
+*achievement vegan visible 30 Vegan
+	Никогда не питайся от смертного
+
+*achievement farmer visible 10 Farmer
+	Питайся от животного трижды
+
+*achievement sandman visible 10 Sandman
+	Питайся от спящего человека трижды
+
+*achievement scene_queen visible 10 Scene Queen
+	Проберись в субкультуру, чтобы питаться трижды
+
+*achievement siren visible 10 Siren
+	Питайся во время секса трижды
+
+*comment Flaw Achievements
+
+*achievement thrall visible 10 Thrall
+	Окажись в Кровавой Связи с вампиром
+
+*achievement messy visible 10 Messy
+	Вызови три беспорядочных критических момента из-за Голода
+
+*achievement cleaner visible 10 Cleaner
+	Успешно спрячь жертву своего Голода
+
+*comment Conviction and ethical achievements
+
+*achievement philosopher visible 20 Philosopher
+	Получи три убеждения
+
+*achievement paragon visible 20 Paragon
+	Успешно заверши игру с максимальной Человечностью
+
+*achievement masquerade visible 20 Маскарад
+	Успешно заверши игру с максимальным Маскарадом
+
+*comment Miscellaneous Achievements
+
+*achievement regnant visible 20 Regnant
+	Создай гуля
+
+*achievement amaranth visible 50 Amaranth
+	Поглоти душу другого вампира
+
+*achievement inchoate_metamorphosis visible 25 Inchoate Metamorphosis
+	Используй запретную науку, чтобы преобразовать и улучшить свою Кровь
+
+*achievement golden_road visible 25 Cool Транспорт
+	Приобрети автомобиль стоимостью более $30,000.
+
+*comment Scene-by-scene achievements
+
+*achievement archon visible 25 Archon of Convenience
+	Выследи убийцу и реши, заслуживает ли его преступление уничтожения
+
+*achievement ward_shadow visible 25 Ward Shadow
+	Проникни в больницу Святого Василия, не подняв тревоги
+
+*achievement saboteur visible 25 Saboteur
+	Уничтожь исследовательский объект
+
+*achievement liberator visible 25 Liberator
+	Освободи мигрантов-заключенных
+
+*achievement good_shepherd visible 25 Good Shepherd
+	Спаси пять исследователей из Биосферы Зеро
+
+*achievement toxic_intel visible 25 Toxic Intel
+	Передай инквизитору опасно неточную информацию
+
+*achievement sword_of_prometheus visible 25 Меч of Prometheus
+	Используй Роллс-Ройс и гигантский арбалет, чтобы остановить буйство вампира
+
+*achievement door_to_beyond visible 25 Door to Beyond
+	Используй Стоунхендж, чтобы телепортировать вампира в Месопотамию
+	
+*comment Secrets and Shadows Achievements
+
+*achievement party_wrecker visible 25 Party Wrecker
+	Работай с Камарильей, чтобы разрушить альянс Гекаты и Министерства
+	
+*achievement necromancers_apprentice visible 25 Necromancer's Apprentice
+	Приобрети фетиш призрака для некроманта
+
+*achievement dark_ceremony visible 25 Dark Ceremony
+	Командуй призраком
+	
+*achievement mercy_for_the_dead visible 25 Mercy for the Dead
+	Защити призрака от привязки к служению
+
+*comment Opening crawl
+
+*if choice_is_omnibus_app
+	*comment skip description
+
+	*goto purchased
+*check_purchase adfree
+*if choice_purchase_supported and not(choice_purchased_adfree)
+	*if choice_is_web
+		*youtube LjJECztW9Mo
+
+	Старейшины доверили тебе, элитному курьеру-вампиру, доставить их секреты. Сможешь ли ты обогнать охотников, других водителей и восходящее солнце?
+
+	[i]Вампир: Маскарад — Ночная Дорога[/i] — это интерактивный хоррор-роман на 850,000 слов от Кайла Маркиза, основанный на [i]Вампир: Маскарад[/i] и происходящий в общей вселенной Мира Тьмы. Твои выборы управляют историей. Это полностью текстовое произведение — без графики и звуковых эффектов — и подпитывается необъятной, неудержимой силой твоего воображения. Оно получило награду "Лучшая Игра" 2020 года на премии XYZZY за интерактивную литературу.
+
+	Это новая Тёмная Эра для мертвых. Когда охотники на вампиров Второй Инквизиции взломали телефонные линии и компьютерные сети, чтобы разоблачить и уничтожить вампиров по всему миру, старейшины обратились к курьерам-нежитям, таким как ты. Десять лет ты мчался по пустыне между городами, доставляя жизненно важную информацию и припасы. Но когда старый друг появляется с планом разрушить кровавую торговлю на юго-западе Америки, всё, что ты построил, начинает рушиться.
+
+	[i]Обгони Конкуренцию.[/i] Гони, прячься или сражайся! Раскрой силы своей крови в древних Дисциплинах, чтобы менять форму, исчезать из виду или доминировать над разумом своих врагов. Используй кровавую магию, нечеловеческую силу и существ ночи, чтобы избежать уничтожения — или просто столкни своих врагов с дороги и продолжай ехать.
+
+	[i]Доставь или Умри.[/i] У всех секретов есть срок годности — как и у тебя. Мчись по пустыне, чтобы доставить секреты, обещания и угрозы. Делай всё, что нужно, чтобы сдать посылку. Но когда работа сделана, останешься ли ты, чтобы использовать ситуацию?
+
+	[i]Преследуй Свою Добычу.[/i] Только кровь может утолить Голод. Очаровывай, соблазняй или бери то, что тебе нужно, но не дай никому узнать, кто ты. Если ты нарушишь Маскарад, твои собратья-вампиры уничтожат тебя за твои проступки, если только Вторая Инквизиция не найдёт тебя первой.
+
+	• Победитель премии XYZZY 2020 года за интерактивную литературу (Лучшая Игра).
+	• Играй за мужчину, женщину или небинарного персонажа; гей, натурал или би.
+	• Охоться в переулках и на задворках юго-запада Америки, чтобы утолить голод и противостоять яростному зову Зверя.
+	• Присоединяйся к Камарилье — бессмертному обществу вампирской элиты — или разрушь её власть над приграничными штатами.
+	• Столкнись с ужасами своего бессмертного существования в нелегальных больницах, заражённых тюремных лагерях и заброшенных исследовательских центрах, усеянных провалившимися экспериментами.
+	• Модифицируй свой автомобиль для скорости, прочности или контрабанды, но помни — куда бы ты ни направлялся, ты должен добраться туда до рассвета!
+	• Разблокируй возможность играть за Тремер или Каитиффа с DLC "Узурпаторы и Изгои".
+	• Разблокируй ещё пять кланов и совершенно новую Дисциплину с DLC "Секреты и Тени".
+
+	Смерть — это трудная дорога. Ты едешь по ней каждую ночь.
+
+	[b]Предупреждение о Контенте:[/b] Эта игра вращается вокруг вампиров: аморальных, пьющих кровь, эксплуататорских, манипулятивных, убивающих, саморазрушительных вампиров. Она рассказывает историю, которая задумана как чудовищная, но не принимай её за оправдание быть чудовищем самому.
+
+	Рекомендуется читательская осмотрительность.
+
+	*if choice_prerelease
+		[i]Ты можешь сыграть в первые четыре главы игры бесплатно сегодня. Остальная часть игры будет доступна ${choice_release_date}.[/i]
+
+		*if choice_is_web
+			[i]Ты можешь [url=https://store.steampowered.com/app/1290270/Vampire_The_Masquerade__Night_Road/]добавить в список желаемого на Steam[/url] или [url=https://play.google.com/store/apps/details?id=com.choiceofgames.nightroad]предварительно зарегистрироваться в Google Play[/url] сейчас![/i]
+
+		*choice
+			#Подпишись, чтобы получить уведомление, когда игра станет доступна.
+				*subscribe {"now": true}
+				*restart
+			#Сыграй в первые четыре главы сейчас бесплатно.
+				*goto purchased
+
+	*elseif true
+		[i]Ты можешь сыграть в первые четыре главы игры бесплатно. Приобрети остальную часть игры ниже.[/i]
+		*if choice_is_advertising_supported
+			[i]Покупка остальной части игры также отключит внутриигровую рекламу.[/i]
+
+		*purchase_discount adfree 2021-11-01 $11.99 $7.99 purchased
+		*if choice_is_advertising_supported
+			*page_break_advertisement
+		*if not(choice_is_advertising_supported)
+			*page_break Играй Сейчас Бесплатно
+
+		*goto purchased
+	*else
+		*if choice_is_advertising_supported
+			[i]Вампир: Маскарад — Ночная Дорога[/i] поддерживается рекламой, но ты можешь купить неограниченную версию, чтобы навсегда отключить рекламу.
+
+			*purchase_discount adfree 2021-11-01 $11.99 $7.99 purchased
+			*page_break_advertisement
+
+			*goto purchased
+		*else
+			[i]Ты можешь сыграть в игру один раз бесплатно или приобрести неограниченные повторные прохождения ниже.[/i]
+
+			*purchase_discount adfree 2021-11-01 $11.99 $7.99 purchased
+			*page_break Играй Сейчас Бесплатно
+
+*label purchased
+*if choice_is_omnibus_app
+	[b]Предупреждение о Контенте:[/b] Эта игра вращается вокруг вампиров: аморальных, пьющих кровь, эксплуататорских, манипулятивных, убивающих, саморазрушительных вампиров. Она рассказывает историю, которая задумана как чудовищная, но не принимай её за оправдание быть чудовищем самому.
+
+	Рекомендуется читательская осмотрительность.
+	*page_break	

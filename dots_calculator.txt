@@ -1,0 +1,692 @@
+*comment CAR DOTS
+
+*if car_speed < 0
+	*set car_speed 0
+*if car_speed > 7
+	*set car_speed 7
+	
+*if car_maneuverability < 0
+	*set car_maneuverability 0
+*if car_maneuverability > 7
+	*set car_maneuverability 7
+	
+*if car_durability < 0
+	*set car_durability 0
+*if car_durability > 7
+	*set car_durability 7
+	
+*if digit
+	*set speed_dots "${car_speed}"
+	*set maneuverability_dots "${car_maneuverability}"
+	*set durability_dots "${car_durability}"
+*else
+	*if car_speed = 0
+		*set speed_dots "○○○○○"
+	*if car_speed = 1
+		*set speed_dots "●○○○○"
+	*if car_speed = 2
+		*set speed_dots "●●○○○"
+	*if car_speed = 3
+		*set speed_dots "●●●○○"
+	*if car_speed = 4
+		*set speed_dots "●●●●○"
+	*if car_speed = 5
+		*set speed_dots "●●●●●"
+	*if car_speed = 6
+		*set speed_dots "●●●●● ●"
+	*if car_speed = 7
+		*set speed_dots "●●●●● ●●"
+		
+	*if car_maneuverability = 0
+		*set maneuverability_dots "○○○○○"
+	*if car_maneuverability = 1
+		*set maneuverability_dots "●○○○○"
+	*if car_maneuverability = 2
+		*set maneuverability_dots "●●○○○"
+	*if car_maneuverability = 3
+		*set maneuverability_dots "●●●○○"
+	*if car_maneuverability = 4
+		*set maneuverability_dots "●●●●○"
+	*if car_maneuverability = 5
+		*set maneuverability_dots "●●●●●"
+	*if car_maneuverability = 6
+		*set maneuverability_dots "●●●●● ●"
+	*if car_maneuverability = 7
+		*set maneuverability_dots "●●●●● ●●"
+
+	*if car_durability = 0
+		*set durability_dots "○○○○○"
+	*if car_durability = 1
+		*set durability_dots "●○○○○"
+	*if car_durability = 2
+		*set durability_dots "●●○○○"
+	*if car_durability = 3
+		*set durability_dots "●●●○○"
+	*if car_durability = 4
+		*set durability_dots "●●●●○"
+	*if car_durability = 5
+		*set durability_dots "●●●●●"
+	*if car_durability = 6
+		*set durability_dots "●●●●● ●"
+	*if car_durability = 7
+		*set durability_dots "●●●●● ●●"
+	
+*comment ATTRIBUTE DOTS
+
+*if digit
+	*set intelligence_dots "${intelligence}"
+	*set wits_dots "${wits}"
+	*set resolve_dots "${resolve}"
+	
+	*set strength_dots "${strength}"
+	*set dexterity_dots "${dexterity}"
+	*set stamina_dots "${stamina}"
+	
+	*set charisma_dots "${charisma}"
+	*set manipulation_dots "${manipulation}"
+	*set composure_dots "${composure}"
+*else 
+	*if intelligence = 1
+		*set intelligence_dots "●○○○○"
+	*if intelligence = 2
+		*set intelligence_dots "●●○○○"
+	*if intelligence = 3
+		*set intelligence_dots "●●●○○"
+	*if intelligence = 4
+		*set intelligence_dots "●●●●○"
+	*if intelligence = 5
+		*set intelligence_dots "●●●●●"
+		
+	*if wits = 1
+		*set wits_dots "●○○○○"
+	*if wits = 2
+		*set wits_dots "●●○○○"
+	*if wits = 3
+		*set wits_dots "●●●○○"
+	*if wits = 4
+		*set wits_dots "●●●●○"
+	*if wits = 5
+		*set wits_dots "●●●●●"
+		
+	*if resolve = 1
+		*set resolve_dots "●○○○○"
+	*if resolve = 2
+		*set resolve_dots "●●○○○"
+	*if resolve = 3
+		*set resolve_dots "●●●○○"
+	*if resolve = 4
+		*set resolve_dots "●●●●○"
+	*if resolve = 5
+		*set resolve_dots "●●●●●"
+		
+	*if strength = 1
+		*set strength_dots "●○○○○"
+	*if strength = 2
+		*set strength_dots "●●○○○"
+	*if strength = 3
+		*set strength_dots "●●●○○"
+	*if strength = 4
+		*set strength_dots "●●●●○"
+	*if strength = 5
+		*set strength_dots "●●●●●"
+		
+	*if dexterity = 1
+		*set dexterity_dots "●○○○○"
+	*if dexterity = 2
+		*set dexterity_dots "●●○○○"
+	*if dexterity = 3
+		*set dexterity_dots "●●●○○"
+	*if dexterity = 4
+		*set dexterity_dots "●●●●○"
+	*if dexterity = 5
+		*set dexterity_dots "●●●●●"
+		
+	*if stamina = 1
+		*set stamina_dots "●○○○○"
+	*if stamina = 2
+		*set stamina_dots "●●○○○"
+	*if stamina = 3
+		*set stamina_dots "●●●○○"
+	*if stamina = 4
+		*set stamina_dots "●●●●○"
+	*if stamina = 5
+		*set stamina_dots "●●●●●"
+		
+	*if charisma = 1
+		*set charisma_dots "●○○○○"
+	*if charisma = 2
+		*set charisma_dots "●●○○○"
+	*if charisma = 3
+		*set charisma_dots "●●●○○"
+	*if charisma = 4
+		*set charisma_dots "●●●●○"
+	*if charisma = 5
+		*set charisma_dots "●●●●●"
+		
+	*if manipulation = 1
+		*set manipulation_dots "●○○○○"
+	*if manipulation = 2
+		*set manipulation_dots "●●○○○"
+	*if manipulation = 3
+		*set manipulation_dots "●●●○○"
+	*if manipulation = 4
+		*set manipulation_dots "●●●●○"
+	*if manipulation = 5
+		*set manipulation_dots "●●●●●"
+		
+	*if composure = 1
+		*set composure_dots "●○○○○"
+	*if composure = 2
+		*set composure_dots "●●○○○"
+	*if composure = 3
+		*set composure_dots "●●●○○"
+	*if composure = 4
+		*set composure_dots "●●●●○"
+	*if composure = 5
+		*set composure_dots "●●●●●"
+	
+*comment SKILL DOTS
+
+*if digit
+	*set athletics_dots "${athletics}"
+	*set combat_dots "${combat}"
+	*set drive_dots "${drive}"
+	*set firearms_dots "${firearms}"
+	*set clandestine_dots "${clandestine}"
+	
+	*set intimidation_dots "${intimidation}"
+	*set leadership_dots "${leadership}"
+	*set persuasion_dots "${persuasion}"
+	*set streetwise_dots "${streetwise}"
+	*set subterfuge_dots "${subterfuge}"
+	
+	*set academics_dots "${academics}"
+	*set awareness_dots "${awareness}"
+	*set investigation_dots "${investigation}"
+	*set technology_dots "${technology}"
+	*set survival_dots "${survival}"
+*else
+	*if athletics = 0
+		*set athletics_dots "○○○"
+	*if athletics = 1
+		*set athletics_dots "●○○"
+	*if athletics = 2
+		*set athletics_dots "●●○"
+	*if athletics = 3
+		*set athletics_dots "●●●"
+		
+	*if combat = 0
+		*set combat_dots "○○○"
+	*if combat = 1
+		*set combat_dots "●○○"
+	*if combat = 2
+		*set combat_dots "●●○"
+	*if combat = 3
+		*set combat_dots "●●●"
+		
+	*if drive = 0
+		*set drive_dots "○○○"
+	*if drive = 1
+		*set drive_dots "●○○"
+	*if drive = 2
+		*set drive_dots "●●○"
+	*if drive = 3
+		*set drive_dots "●●●"
+
+	*if firearms = 0
+		*set firearms_dots "○○○"
+	*if firearms = 1
+		*set firearms_dots "●○○"
+	*if firearms = 2
+		*set firearms_dots "●●○"
+	*if firearms = 3
+		*set firearms_dots "●●●"
+		
+	*if clandestine = 0
+		*set clandestine_dots "○○○"
+	*if clandestine = 1
+		*set clandestine_dots "●○○"
+	*if clandestine = 2
+		*set clandestine_dots "●●○"
+	*if clandestine = 3
+		*set clandestine_dots "●●●"
+			
+	*if intimidation = 0
+		*set intimidation_dots "○○○"
+	*if intimidation = 1
+		*set intimidation_dots "●○○"
+	*if intimidation = 2
+		*set intimidation_dots "●●○"
+	*if intimidation = 3
+		*set intimidation_dots "●●●"
+		
+	*if leadership = 0
+		*set leadership_dots "○○○"
+	*if leadership = 1
+		*set leadership_dots "●○○"
+	*if leadership = 2
+		*set leadership_dots "●●○"
+	*if leadership = 3
+		*set leadership_dots "●●●"
+		
+	*if persuasion = 0
+		*set persuasion_dots "○○○"
+	*if persuasion = 1
+		*set persuasion_dots "●○○"
+	*if persuasion = 2
+		*set persuasion_dots "●●○"
+	*if persuasion = 3
+		*set persuasion_dots "●●●"
+
+	*if streetwise = 0
+		*set streetwise_dots "○○○"
+	*if streetwise = 1
+		*set streetwise_dots "●○○"
+	*if streetwise = 2
+		*set streetwise_dots "●●○"
+	*if streetwise = 3
+		*set streetwise_dots "●●●"
+		
+	*if subterfuge = 0
+		*set subterfuge_dots "○○○"
+	*if subterfuge = 1
+		*set subterfuge_dots "●○○"
+	*if subterfuge = 2
+		*set subterfuge_dots "●●○"
+	*if subterfuge = 3
+		*set subterfuge_dots "●●●"
+
+	*if academics = 0
+		*set academics_dots "○○○"
+	*if academics = 1
+		*set academics_dots "●○○"
+	*if academics = 2
+		*set academics_dots "●●○"
+	*if academics = 3
+		*set academics_dots "●●●"
+		
+	*if awareness = 0
+		*set awareness_dots "○○○"
+	*if awareness = 1
+		*set awareness_dots "●○○"
+	*if awareness = 2
+		*set awareness_dots "●●○"
+	*if awareness = 3
+		*set awareness_dots "●●●"
+		
+	*if investigation = 0
+		*set investigation_dots "○○○"
+	*if investigation = 1
+		*set investigation_dots "●○○"
+	*if investigation = 2
+		*set investigation_dots "●●○"
+	*if investigation = 3
+		*set investigation_dots "●●●"
+		
+	*if technology = 0
+		*set technology_dots "○○○"
+	*if technology = 1
+		*set technology_dots "●○○"
+	*if technology = 2
+		*set technology_dots "●●○"
+	*if technology = 3
+		*set technology_dots "●●●"
+		
+	*if survival = 0
+		*set survival_dots "○○○"
+	*if survival = 1
+		*set survival_dots "●○○"
+	*if survival = 2
+		*set survival_dots "●●○"
+	*if survival = 3
+		*set survival_dots "●●●"
+	
+*comment DISCIPLINE DOTS
+
+*if digit
+	*set animalism_dots "${animalism}"
+	*set auspex_dots "${auspex}"
+	*set blood_sorcery_dots "${blood_sorcery}"
+	*set celerity_dots "${celerity}"
+	*set dominate_dots "${dominate}"
+	*set fortitude_dots "${fortitude}"
+	*set obfuscate_dots "${obfuscate}"
+	*set oblivion_dots "${oblivion}"
+	*set potence_dots "${potence}"
+	*set presence_dots "${presence}"
+	*set protean_dots "${protean}"
+*else
+	*if animalism = 0
+		*set animalism_dots "○○○"
+	*if animalism = 1
+		*set animalism_dots "●○○"
+	*if animalism = 2
+		*set animalism_dots "●●○"
+	*if animalism = 3
+		*set animalism_dots "●●●"
+		
+	*if auspex = 0
+		*set auspex_dots "○○○"
+	*if auspex = 1
+		*set auspex_dots "●○○"
+	*if auspex = 2
+		*set auspex_dots "●●○"
+	*if auspex = 3
+		*set auspex_dots "●●●"
+		
+	*if blood_sorcery = 0
+		*set blood_sorcery_dots "○○○"
+	*if blood_sorcery = 1
+		*set blood_sorcery_dots "●○○"
+	*if blood_sorcery = 2
+		*set blood_sorcery_dots "●●○"
+	*if blood_sorcery = 3
+		*set blood_sorcery_dots "●●●"
+		
+	*if celerity = 0
+		*set celerity_dots "○○○"
+	*if celerity = 1
+		*set celerity_dots "●○○"
+	*if celerity = 2
+		*set celerity_dots "●●○"
+	*if celerity = 3
+		*set celerity_dots "●●●"
+		
+	*if dominate = 0
+		*set dominate_dots "○○○"
+	*if dominate = 1
+		*set dominate_dots "●○○"
+	*if dominate = 2
+		*set dominate_dots "●●○"
+	*if dominate = 3
+		*set dominate_dots "●●●"
+		
+	*if fortitude = 0
+		*set fortitude_dots "○○○"
+	*if fortitude = 1
+		*set fortitude_dots "●○○"
+	*if fortitude = 2
+		*set fortitude_dots "●●○"
+	*if fortitude = 3
+		*set fortitude_dots "●●●"
+		
+	*if obfuscate = 0
+		*set obfuscate_dots "○○○"
+	*if obfuscate = 1
+		*set obfuscate_dots "●○○"
+	*if obfuscate = 2
+		*set obfuscate_dots "●●○"
+	*if obfuscate = 3
+		*set obfuscate_dots "●●●"
+		
+	*if oblivion = 0
+		*set oblivion_dots "○○○"
+	*if oblivion = 1
+		*set oblivion_dots "●○○"
+	*if oblivion = 2
+		*set oblivion_dots "●●○"
+	*if oblivion = 3
+		*set oblivion_dots "●●●"
+		
+	*if potence = 0
+		*set potence_dots "○○○"
+	*if potence = 1
+		*set potence_dots "●○○"
+	*if potence = 2
+		*set potence_dots "●●○"
+	*if potence = 3
+		*set potence_dots "●●●"
+		
+	*if presence = 0
+		*set presence_dots "○○○"
+	*if presence = 1
+		*set presence_dots "●○○"
+	*if presence = 2
+		*set presence_dots "●●○"
+	*if presence = 3
+		*set presence_dots "●●●"
+		
+	*if protean = 0
+		*set protean_dots "○○○"
+	*if protean = 1
+		*set protean_dots "●○○"
+	*if protean = 2
+		*set protean_dots "●●○"
+	*if protean = 3
+		*set protean_dots "●●●"
+
+*comment Personality Dots
+
+*if bravo < 20
+	*set bravo_dots "●●●|○○○"
+*elseif bravo < 30
+	*set bravo_dots "○●●|○○○"
+*elseif bravo < 40
+	*set bravo_dots "○○●|○○○"
+*elseif bravo > 80
+	*set bravo_dots "○○○|●●●"
+*elseif bravo > 70
+	*set bravo_dots "○○○|●●○"
+*elseif bravo > 60
+	*set bravo_dots "○○○|●○○"
+*else
+	*set bravo_dots "○○○|○○○"
+	
+*if penitent < 20
+	*set penitent_dots "●●●|○○○"
+*elseif penitent < 30
+	*set penitent_dots "○●●|○○○"
+*elseif penitent < 40
+	*set penitent_dots "○○●|○○○"
+*elseif penitent > 80
+	*set penitent_dots "○○○|●●●"
+*elseif penitent > 70
+	*set penitent_dots "○○○|●●○"
+*elseif penitent > 60
+	*set penitent_dots "○○○|●○○"
+*else
+	*set penitent_dots "○○○|○○○"
+	
+*if traditionalist < 20
+	*set traditionalist_dots "●●●|○○○"
+*elseif traditionalist < 30
+	*set traditionalist_dots "○●●|○○○"
+*elseif traditionalist < 40
+	*set traditionalist_dots "○○●|○○○"
+*elseif traditionalist > 80
+	*set traditionalist_dots "○○○|●●●"
+*elseif traditionalist > 70
+	*set traditionalist_dots "○○○|●●○"
+*elseif traditionalist > 60
+	*set traditionalist_dots "○○○|●○○"
+*else
+	*set traditionalist_dots "○○○|○○○"
+	
+*if materialist < 20
+	*set materialist_dots "●●●|○○○"
+*elseif materialist < 30
+	*set materialist_dots "○●●|○○○"
+*elseif materialist < 40
+	*set materialist_dots "○○●|○○○"
+*elseif materialist > 80
+	*set materialist_dots "○○○|●●●"
+*elseif materialist > 70
+	*set materialist_dots "○○○|●●○"
+*elseif materialist > 60
+	*set materialist_dots "○○○|●○○"
+*else
+	*set materialist_dots "○○○|○○○"
+	
+*return
+
+*label car_structure
+*if max_car_structure < 1
+	*set max_car_structure 1
+*if max_car_structure > 7
+	*set max_car_structure 7
+*if car_structure < 0
+	*set car_structure 0
+*if car_structure > max_car_structure
+	*set car_structure max_car_structure
+	
+*if digit
+	*if max_car_structure = 1
+		*if car_structure < 1
+			*set structure_boxes "Разбит"
+		*if car_structure = 1
+			*set structure_boxes "Неповреждён" 
+	*if max_car_structure = 2
+		*if car_structure < 1
+			*set structure_boxes "Разбит"
+		*if car_structure = 1
+			*set structure_boxes "1 из 2"
+		*if car_structure = 2
+			*set structure_boxes "Неповреждён"
+	*if max_car_structure = 3
+		*if car_structure < 1
+			*set structure_boxes "Разбит"
+		*if car_structure = 1
+			*set structure_boxes "2 из 3"
+		*if car_structure = 2
+			*set structure_boxes "1 из 3"
+		*if car_structure = 3
+			*set structure_boxes "Неповреждён"
+	*if max_car_structure = 4
+		*if car_structure < 1
+			*set structure_boxes "Разбит"
+		*if car_structure = 1
+			*set structure_boxes "3 из 4"
+		*if car_structure = 2
+			*set structure_boxes "2 из 4"
+		*if car_structure = 3
+			*set structure_boxes "1 из 4"
+		*if car_structure = 4
+			*set structure_boxes "Неповреждён"
+	*if max_car_structure = 5
+		*if car_structure < 1
+			*set structure_boxes "Разбит"
+		*if car_structure = 1
+			*set structure_boxes "4 из 5"
+		*if car_structure = 2
+			*set structure_boxes "3 из 5"
+		*if car_structure = 3
+			*set structure_boxes "2 из 5"
+		*if car_structure = 4
+			*set structure_boxes "1 из 5"
+		*if car_structure = 5
+			*set structure_boxes "Неповреждён"
+	*if max_car_structure = 6
+		*if car_structure < 1
+			*set structure_boxes "Разбит"
+		*if car_structure = 1
+			*set structure_boxes "5 из 6"
+		*if car_structure = 2
+			*set structure_boxes "4 из 6"
+		*if car_structure = 3
+			*set structure_boxes "3 из 6"
+		*if car_structure = 4
+			*set structure_boxes "2 из 6"
+		*if car_structure = 5
+			*set structure_boxes "1 из 6"
+		*if car_structure = 6
+			*set structure_boxes "Неповреждён"
+	*if max_car_structure = 7
+		*if car_structure < 1
+			*set structure_boxes "Разбит"
+		*if car_structure = 1
+			*set structure_boxes "6 из 7"
+		*if car_structure = 2
+			*set structure_boxes "5 из 7"
+		*if car_structure = 3
+			*set structure_boxes "4 из 7"
+		*if car_structure = 4
+			*set structure_boxes "3 из 7"
+		*if car_structure = 5
+			*set structure_boxes "2 из 7"
+		*if car_structure = 6
+			*set structure_boxes "1 из 7"
+		*if car_structure = 7
+			*set structure_boxes "Неповреждён"
+*else	
+	*if car_structure < 0
+		*set car_structure 0
+	*if car_structure > max_car_structure
+		*set car_structure max_car_structure
+	*if max_car_structure = 1
+		*if car_structure < 1
+			*set structure_boxes "■"
+		*if car_structure = 1
+			*set structure_boxes "□" 
+	*if max_car_structure = 2
+		*if car_structure < 1
+			*set structure_boxes "■■"
+		*if car_structure = 1
+			*set structure_boxes "■□"
+		*if car_structure = 2
+			*set structure_boxes "□□"
+	*if max_car_structure = 3
+		*if car_structure < 1
+			*set structure_boxes "■■■"
+		*if car_structure = 1
+			*set structure_boxes "■■□"
+		*if car_structure = 2
+			*set structure_boxes "■□□"
+		*if car_structure = 3
+			*set structure_boxes "□□□"
+	*if max_car_structure = 4
+		*if car_structure < 1
+			*set structure_boxes "■■■■"
+		*if car_structure = 1
+			*set structure_boxes "■■■□"
+		*if car_structure = 2
+			*set structure_boxes "■■□□"
+		*if car_structure = 3
+			*set structure_boxes "■□□□"
+		*if car_structure = 4
+			*set structure_boxes "□□□□"
+	*if max_car_structure = 5
+		*if car_structure < 1
+			*set structure_boxes "■■■■■"
+		*if car_structure = 1
+			*set structure_boxes "■■■■□"
+		*if car_structure = 2
+			*set structure_boxes "■■■□□"
+		*if car_structure = 3
+			*set structure_boxes "■■□□□"
+		*if car_structure = 4
+			*set structure_boxes "■□□□□"
+		*if car_structure = 5
+			*set structure_boxes "□□□□□"
+	*if max_car_structure = 6
+		*if car_structure < 1
+			*set structure_boxes "■■■■■ ■"
+		*if car_structure = 1
+			*set structure_boxes "■■■■■ □"
+		*if car_structure = 2
+			*set structure_boxes "■■■■□ □"
+		*if car_structure = 3
+			*set structure_boxes "■■■□□ □"
+		*if car_structure = 4
+			*set structure_boxes "■■□□□ □"
+		*if car_structure = 5
+			*set structure_boxes "■□□□□ □"
+		*if car_structure = 6
+			*set structure_boxes "□□□□□ □"
+	*if max_car_structure = 7
+		*if car_structure < 1
+			*set structure_boxes "■■■■■ ■■"
+		*if car_structure = 1
+			*set structure_boxes "■■■■■ ■□"
+		*if car_structure = 2
+			*set structure_boxes "■■■■■ □□"
+		*if car_structure = 3
+			*set structure_boxes "■■■■□ □□"
+		*if car_structure = 4
+			*set structure_boxes "■■■□□ □□"
+		*if car_structure = 5
+			*set structure_boxes "■■□□□ □□"
+		*if car_structure = 6
+			*set structure_boxes "■□□□□ □□"
+		*if car_structure = 7
+			*set structure_boxes "□□□□□ □□"
+*return

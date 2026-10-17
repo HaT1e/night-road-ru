@@ -1,0 +1,61 @@
+*label standard_mods
+*comment Resets blood use for round-by-round combat
+*set first_next "Сначала"
+*set focused false
+*comment Resets "focused" if you previously spent Сила воли
+*set hunger_penalty 0
+*if hunger > 5
+	*set hunger 5
+*if ( hunger >= willpower ) and ( hunger > 0 )
+	*set hunger_penalty -((hunger+1)-willpower)
+	*label hunger_minimizer
+	*if ( hunger_penalty +3 ) < 0
+		*set hunger_penalty +1
+		*goto hunger_minimizer
+	*comment Голод: ${hunger}
+	*comment Сила воли: ${willpower}
+	*comment Голод Penalty: ${hunger_penalty}
+*comment Determines severity of hunger penalty
+*if clan = "Бруха"
+	*set mess (4+hunger_penalty)
+	*if mess < 0
+		*set mess 0
+*else
+	*set mess (5+hunger_penalty)
+	*if mess < 1
+		*set mess 1
+*comment Determines how easy it is to get a messy critical. Бруха trigger more messy criticals than other clans.
+*set human_penalty 0
+*if clan = "Гангрел"
+	*if humanity = 3
+		*set human_penalty -1
+	*elseif humanity = 2
+		*set human_penalty -2
+	*elseif humanity = 1
+		*set human_penalty -3
+	*else
+		*set human_penalty 0
+*else
+	*if humanity = 2
+		*set human_penalty -1
+	*elseif humanity = 1
+		*set human_penalty -2
+	*else 
+		*set human_penalty 0
+*comment Calculates penalty to human interaction based on Человечность. Гангрел suffer greater penalties.
+*set hunger_frenzy false
+*if ( willpower <= hunger ) and ( hunger > 3 )
+	*set hunger_frenzy true
+*if health = max_health
+	*set agg false
+*set obob "[Затемнение]"
+*if ( oblivion > (obfuscate+1) )
+	*set obob "[Забвение]"
+*if ( obfuscate = 0 ) and ( oblivion > 0 )
+	*set obob "[Забвение]"
+*set obpres "[Присутствие]"
+*if ( oblivion > (presence+1) )
+	*set obpres "[Забвение]"
+*if ( presence = 0 ) and ( oblivion > 0 )
+	*set obpres "[Забвение]"
+*return

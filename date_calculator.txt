@@ -1,0 +1,31 @@
+*comment Date Calculator
+
+Тусон, Аризона.
+*line_break
+Ночь
+*if missions = 1
+	6 ноября.
+	*line_break
+	Восход солнца: 6:45 утра.
+*elseif missions = 2
+	15 ноября.
+	*line_break
+	Восход солнца: 6:53 утра.
+*elseif missions = 3
+	22 ноября.
+	*line_break
+	Восход солнца: 6:59 утра.
+*elseif missions = 4
+	30 ноября.
+	*line_break
+	Восход солнца: 7:06 утра.
+*elseif missions = 5
+	9 декабря.
+	*line_break
+	Восход солнца: 7:13 утра.
+*else
+	14 декабря.
+	*line_break
+	Восход солнца: 7:17 утра.
+*line_break
+*return

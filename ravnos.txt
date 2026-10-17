@@ -1,0 +1,176 @@
+*label hotels
+*if subterfuge = 0
+	*set wealth -1000
+*elseif subterfuge = 1
+	*set wealth -500
+*elseif subterfuge = 2
+	*set wealth -250
+*else
+	*set wealth -100
+*if wealth < 0
+	*set wealth 0
+	*set si %-10
+*return
+*label wilds
+*if survival = 0
+	*set willpower -1
+	*if agg
+		*set health -2
+	*else
+		*set health -1
+		*set agg true
+*elseif survival = 1
+	*set willpower -1
+	*if agg
+		*set health -1
+	*else
+		*set agg true
+*elseif survival = 2
+	*set willpower -1
+*else
+	*goto wilds_calc
+*label wilds_calc
+*if health < 1
+	*set agg true
+	*set health 1
+	*set willpower 0
+*if willpower < 0
+	*set health -1
+	*set willpower 0
+*return
+*label breakins
+*if clandestine = 1
+	*set si %-6
+*elseif clandestine = 2
+	*set si %-4
+*else
+	*set si %-2
+*return
+*label streets
+*if streetwise = 0
+	*set camarilla %-8
+*elseif streetwise = 1
+	*set camarilla %-6
+*elseif streetwise = 2
+	*set camarilla %-4
+*else
+	*set camarilla %-2
+*return
+*label julian
+*if need_new_place_to_stay
+	Проблема встает перед тобой почти сразу: ты больше не можешь рисковать и оставаться с людьми Джулиана. Что ты собираешься делать?
+	*gosub choose_ravnos_solution	
+*else
+	*if ( persuasion + human_penalty ) < 0
+		*set julian %-8
+	*elseif ( persuasion + human_penalty ) = 0
+		*set julian %-6
+	*elseif ( persuasion + human_penalty ) = 1
+		*set julian %-4
+	*else
+		*set julian %-2
+	*return
+*label madrigal
+*set wealth -ravnos_cost
+*if wealth < 0
+	*set camarilla %-10
+*return
+
+*label choose_ravnos_solution
+
+*temp ravnos_desc "undetermined"
+*if ravnos_solution = "hotels"
+	*set ravnos_desc "использование отелей"
+*elseif ravnos_solution = "break-ins"
+	*set ravnos_desc "взлом пустых квартир"
+*elseif ravnos_solution = "streets"
+	*set ravnos_desc "улицы"
+*elseif ravnos_solution = "wilds"
+	*set ravnos_desc "дикая природа"
+*elseif ravnos_solution = "Джулиан"
+	*set ravnos_desc "Джулиан"
+*elseif ravnos_solution = "Madrigal"
+	*set ravnos_desc "комнаты, которые предоставляет мне Мадригал"
+*else
+	*bug
+	
+*set ravnos_cost 20000/camarilla
+*set ravnos_cost round(ravnos_cost)
+*temp at_madrigal false
+
+*label choose_ravnos_solution_choice
+
+*choice
+	*if donati_ravnos_choice
+		#Это может привлечь внимание охотников, но я остаюсь с ${ravnos_desc}. Я не собираюсь метаться в панике, когда за мной следит SI.
+			*set si %-5
+			Ты останешься с тем, что знаешь. Но сейчас тебе нужно убраться отсюда.
+			*set donati_ravnos_choice false
+			*return
+	*if ravnos_solution != "hotels"
+		#Я буду снимать дешёвые отели. Это дорого, но несколько лживых слов администраторам позволят мне перемещаться относительно безопасно.@{em  [Stealth]|}
+			*set ravnos_solution "hotels"
+			Ты можешь использовать незарегистрированные мотели, дневные номера, даже Airbnb по хорошей цене, если под рукой фальшивое удостоверение. А оно у тебя всегда есть. Так что расходы будут не такими большими.
+			*gosub hotels
+			*set donati_ravnos_choice false
+			*return
+	*if ( ravnos_solution != "break-ins" ) and ( clandestine > 0 )
+		#Я буду проникать в пустующие здания. Это может привлечь охотников, но я буду осторожен и стану использовать только пустые квартиры или дома, не воруя ничего.@{em  [Скрытность]|}
+			*set ravnos_solution "break-ins"
+			Полагаться на криминальные навыки рискованно, но ты знаешь, как быть осторожным: проверять Facebook людей, чтобы узнать, когда они уезжают, искать камеры, готовить пути отхода — всё в таком духе.
+			*gosub breakins
+			*set donati_ravnos_choice false
+			*return
+	*if ravnos_solution != "streets"
+		#Я останусь на улицах. Как только узнаешь места, где можно остаться без проблем, всё будет в порядке.@{em  [Уличная смекалка]|}
+			*set ravnos_solution "streets"
+			Очевидно, это опасно, и не только из-за риска быть застигнутым солнцем: вентру Тусона цепляются за худшие части города как за своё наследство после гибели их сира и прихода к власти принца Леттоу. Тебе придётся держаться в тени, чтобы не навлечь их гнев. Или хотя бы их ворчание — у них уже мало реальной власти.
+			*gosub streets
+			*set donati_ravnos_choice false
+			*return
+	*if ( ravnos_solution != "wilds" ) and ( survival > 0 )
+			#Я буду кружить вокруг города и прятаться в пустыне. Даже без машины я знаю, где искать укрытие, хотя постоянно рассчитывать расстояние до безопасности и время до рассвета — это психологически тяжело.@{em  [Выживание]|}
+				*set ravnos_solution "wilds"
+				Жизнь в дикой местности всегда опасна, и ты надеешься, что твоих навыков выживания хватит, чтобы находить укрытие каждую ночь перед рассветом. Просто будь внимателен и осторожен.
+				*gosub wilds
+				*set donati_ravnos_choice false
+				*return
+	*if ( ravnos_solution != "Джулиан" ) and ( julian_rel != "hostile" )
+		#Я попрошу Джулиана помочь мне. Это не обрадует его, но я смогу убедить его людей приютить меня.@{em  [Убеждение]|}
+			*set ravnos_solution "Джулиан"
+			Ты сможешь связаться с кем-то из его людей и использовать ваше прошлое сотрудничество с Джулианом, чтобы получить то, что тебе нужно.
+			*gosub julian
+			*set donati_ravnos_choice false
+			*return
+	*if ravnos_solution != "Madrigal"
+		*if ( considered_apartment_rotation ) and ( madrigal_destroyed = false )
+			*if ( previous_camarilla_score != camarilla ) and ( car != "undetermined" )
+				#Я направляюсь прямо в Madrigal Real Estate и договариваюсь о ротации квартир.
+					*set ravnos_cost 20000/camarilla
+					*set ravnos_cost round(ravnos_cost)
+					*set at_madrigal true
+					*set previous_camarilla_score camarilla
+					Когда ты заходишь в агентство недвижимости и объясняешь, что тебе нужно — стараясь не выглядеть слишком заинтересованным — Анна открывает ноутбук, стучит по старому калькулятору минуту, затем говорит: "$${ravnos_cost}."
+					*set donati_ravnos_choice false
+					*goto choose_ravnos_solution_choice
+	*if ravnos_solution != "Madrigal"
+		*if ( considered_apartment_rotation ) and ( madrigal_destroyed = false )
+			*if ( previous_camarilla_score = camarilla ) and ( car != "undetermined" )
+				#Я @{at_madrigal договариваюсь о регулярных платежах в $${ravnos_cost} с Анной|иду прямо в Madrigal Real Estate и устанавливаю регулярные платежи в $${ravnos_cost}} за использование безопасных домов Камарильи.
+					*set ravnos_cost 20000/camarilla
+					*set ravnos_cost round(ravnos_cost)
+					*set previous_camarilla_score camarilla
+					*if at_madrigal
+						"Давай оформим," говоришь ты.
+					
+						"Конечно," говорит Анна. Она 
+					*else
+						Анна открывает ноутбук, когда видит тебя. Ты объясняешь, что тебе нужно, и она называет цену — $${ravnos_cost}.
+						
+						"Давай оформим," говоришь ты.
+						
+						Агент 
+					печатает список мест (тщательно зашифрованный, конечно) и подходящее время для их использования. "Потрать час на запоминание этого списка, затем уничтожь его. Возвращайся каждые несколько недель за обновлённым шифром."
+					*gosub madrigal
+					*set donati_ravnos_choice false
+					*return
