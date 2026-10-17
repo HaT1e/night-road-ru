@@ -3963,7 +3963,7 @@
     "\t*set form \"форма, чтобы у меня снова был мой пистолет\"",
     "*if has_sword and has_gun",
     "\t*set form \"форма, чтобы у меня снова были мой меч и пистолет\"",
-    "*temp protean_attack \"STR\"",
+    "*temp protean_attack \"СИЛ\"",
     "*if beast_form",
     "\t*set protean_attack \"ЛОВ\"",
     "\t*if composure < dexterity",

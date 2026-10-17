@@ -2987,17 +2987,17 @@
 	*set penny_stat wits
 	*set penny_stat_desc "СМК"
 *temp lighting_stat intelligence
-*temp lighting_stat_desc "INT"
+*temp lighting_stat_desc "ИНТ"
 *if wits > intelligence
 	*set lighting_stat wits
 	*set lighting_stat_desc "СМК"
 *temp climb_stat strength
-*temp climb_stat_desc "STR"
+*temp climb_stat_desc "СИЛ"
 *if dexterity > strength
 	*set climb_stat dexterity
 	*set climb_stat_desc "ЛОВ"
 *temp dominate_stat resolve
-*temp dominate_stat_desc "RES"
+*temp dominate_stat_desc "РЕШ"
 *if manipulation > resolve
 	*set dominate_stat manipulation
 	*set dominate_stat_desc "МАН"
@@ -3267,7 +3267,7 @@
 *temp veiled_van false
 
 *temp van_brawl_stat strength
-*temp van_brawl_stat_desc "STR"
+*temp van_brawl_stat_desc "СИЛ"
 *if dexterity < strength
 	*set van_brawl_stat dexterity
 	*set van_brawl_stat_desc "ЛОВ"
@@ -4992,7 +4992,7 @@ $!{brian} — лишь темное пятно на @{found_owl стене, ещ
 			
 *label camarilla_reward
 
-*temp dallas_desc "for when I go to Лагерь Шеффлера"
+*temp dallas_desc "попасть в лагерь Шеффлера"
 *if migrant_camp_done
 	*set dallas_desc "на случай, если я когда-нибудь окажусь в Далласе"
 *if halfway

@@ -1,4 +1,4 @@
-*title Vampire: The Маскарад — Night Road
+*title Vampire: The Masquerade — Night Road
 *author Kyle Marquis
 
 *scene_list
@@ -1358,47 +1358,47 @@
 *create messy_criticals 0
 *create vegan_possible true
 
-*achievement alleycat visible 10 Alleycat
+*achievement alleycat visible 10 Уличный кот
 	Избей кого-нибудь и возьми их кровь трижды
 
-*achievement bagger visible 50 Bagger
+*achievement bagger visible 50 Пакетник
 	Пей кровь из пакетов трижды
 
-*achievement blood_leech visible 10 Кровь Leech
+*achievement blood_leech visible 10 Кровопийца
 	Питайся от другого вампира
 
-*achievement vegan visible 30 Vegan
+*achievement vegan visible 30 Веган
 	Никогда не питайся от смертного
 
-*achievement farmer visible 10 Farmer
+*achievement farmer visible 10 Фермер
 	Питайся от животного трижды
 
-*achievement sandman visible 10 Sandman
+*achievement sandman visible 10 Песочный человек
 	Питайся от спящего человека трижды
 
-*achievement scene_queen visible 10 Scene Queen
+*achievement scene_queen visible 10 Королева тусовки
 	Проберись в субкультуру, чтобы питаться трижды
 
-*achievement siren visible 10 Siren
+*achievement siren visible 10 Сирена
 	Питайся во время секса трижды
 
 *comment Flaw Achievements
 
-*achievement thrall visible 10 Thrall
+*achievement thrall visible 10 Прислужник
 	Окажись в Кровавой Связи с вампиром
 
-*achievement messy visible 10 Messy
+*achievement messy visible 10 Неряха
 	Вызови три беспорядочных критических момента из-за Голода
 
-*achievement cleaner visible 10 Cleaner
+*achievement cleaner visible 10 Чистильщик
 	Успешно спрячь жертву своего Голода
 
 *comment Conviction and ethical achievements
 
-*achievement philosopher visible 20 Philosopher
+*achievement philosopher visible 20 Философ
 	Получи три убеждения
 
-*achievement paragon visible 20 Paragon
+*achievement paragon visible 20 Идеал
 	Успешно заверши игру с максимальной Человечностью
 
 *achievement masquerade visible 20 Маскарад
@@ -1406,56 +1406,56 @@
 
 *comment Miscellaneous Achievements
 
-*achievement regnant visible 20 Regnant
+*achievement regnant visible 20 Регнант
 	Создай гуля
 
-*achievement amaranth visible 50 Amaranth
+*achievement amaranth visible 50 Амарант
 	Поглоти душу другого вампира
 
-*achievement inchoate_metamorphosis visible 25 Inchoate Metamorphosis
+*achievement inchoate_metamorphosis visible 25 Начавшаяся метаморфоза
 	Используй запретную науку, чтобы преобразовать и улучшить свою Кровь
 
-*achievement golden_road visible 25 Cool Транспорт
+*achievement golden_road visible 25 Крутая тачка
 	Приобрети автомобиль стоимостью более $30,000.
 
 *comment Scene-by-scene achievements
 
-*achievement archon visible 25 Archon of Convenience
+*achievement archon visible 25 Архонт поневоле
 	Выследи убийцу и реши, заслуживает ли его преступление уничтожения
 
-*achievement ward_shadow visible 25 Ward Shadow
+*achievement ward_shadow visible 25 Тень в палате
 	Проникни в больницу Святого Василия, не подняв тревоги
 
-*achievement saboteur visible 25 Saboteur
+*achievement saboteur visible 25 Диверсант
 	Уничтожь исследовательский объект
 
-*achievement liberator visible 25 Liberator
+*achievement liberator visible 25 Освободитель
 	Освободи мигрантов-заключенных
 
-*achievement good_shepherd visible 25 Good Shepherd
+*achievement good_shepherd visible 25 Добрый пастырь
 	Спаси пять исследователей из Биосферы Зеро
 
-*achievement toxic_intel visible 25 Toxic Intel
+*achievement toxic_intel visible 25 Токсичные данные
 	Передай инквизитору опасно неточную информацию
 
-*achievement sword_of_prometheus visible 25 Меч of Prometheus
+*achievement sword_of_prometheus visible 25 Меч Прометея
 	Используй Роллс-Ройс и гигантский арбалет, чтобы остановить буйство вампира
 
-*achievement door_to_beyond visible 25 Door to Beyond
+*achievement door_to_beyond visible 25 Дверь за грань
 	Используй Стоунхендж, чтобы телепортировать вампира в Месопотамию
 	
 *comment Secrets and Shadows Achievements
 
-*achievement party_wrecker visible 25 Party Wrecker
+*achievement party_wrecker visible 25 Разрушитель вечеринок
 	Работай с Камарильей, чтобы разрушить альянс Гекаты и Министерства
 	
-*achievement necromancers_apprentice visible 25 Necromancer's Apprentice
+*achievement necromancers_apprentice visible 25 Ученик некроманта
 	Приобрети фетиш призрака для некроманта
 
-*achievement dark_ceremony visible 25 Dark Ceremony
+*achievement dark_ceremony visible 25 Тёмный ритуал
 	Командуй призраком
 	
-*achievement mercy_for_the_dead visible 25 Mercy for the Dead
+*achievement mercy_for_the_dead visible 25 Милосердие к мёртвым
 	Защити призрака от привязки к служению
 
 *comment Opening crawl

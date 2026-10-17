@@ -2,13 +2,13 @@
 *set missions +1
 
 *if missions = 3
-	*text_image chap_6a.svg center Chapter Six: Больница Святого Василия
+	*text_image chap_6a.svg center Глава шестая: Больница Святого Василия
 	*gosub_scene date_calculator
 *elseif missions = 2
-	*text_image chap_5a.svg center Chapter Five: Больница Святого Василия
+	*text_image chap_5a.svg center Глава пятая: Больница Святого Василия
 	*gosub_scene date_calculator
 *else
-	*text_image chap_4a.svg center Chapter Four: Больница Святого Василия
+	*text_image chap_4a.svg center Глава четвёртая: Больница Святого Василия
 	*gosub_scene date_calculator
 
 *if missions = 1
@@ -3925,9 +3925,9 @@
 *set sword_damage damage
 *if beast_form
 	*set claws_available true
-*temp protean_animal "wolf"
+*temp protean_animal "волка"
 *if serpentis
-	*set protean_animal "змея"
+	*set protean_animal "змеи"
 *choice
 	*if ( has_gun ) and ( round = 1 )
 		#@{((ghoul = "Елена") or (ghoul = "Рауль")) | Это принесёт нам неприятности, но} Я достаю пистолет и стреляю в Паттермустера, пока он не добрался до меня!@{em  [ЛОВ+Огнестрельное оружие]|}
@@ -4796,7 +4796,7 @@
 				яростно по спине, и это твой сигнал перестать медлить. Ты бросаешься через окно.
 				*goto grimace_ignore
 	*if ( protean = 3 ) and ( round = 2 )
-		*selectable_if ((rage_frenzy = false) and ( hunger < 5)) #Я достаточно быстр, чтобы использовать старый трюк оккультиста: я @{beast_form возвращаю свой человеческий облик|превращаюсь в ${protean_animal}} и выскальзываю из хватки Паттермустера. @{((serpentis) and (beast_form = false)) "Большая змея" — это серьёзное нарушение Маскарада, но плевать.|}
+		*selectable_if ((rage_frenzy = false) and ( hunger < 5)) #Я достаточно быстр, чтобы использовать старый трюк оккультиста: я @{beast_form возвращаю свой человеческий облик|принимаю облик ${protean_animal}} и выскальзываю из хватки Паттермустера. @{((serpentis) and (beast_form = false)) "Большая змея" — это серьёзное нарушение Маскарада, но плевать.|}
 			*comment Easy
 			*comment t_dexterity t_academics
 			*set pattermuster_mod +hunger_penalty

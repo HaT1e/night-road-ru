@@ -237,7 +237,7 @@
 	*line_break
 
 *page_break End
-Мы надеемся, что вам понравилось играть в [i]Vampire: The Маскарад — Night Road.[/i]
+Мы надеемся, что вам понравилось играть в [i]Vampire: The Masquerade — Night Road.[/i]
 
 *feedback
 

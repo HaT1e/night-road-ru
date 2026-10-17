@@ -59,13 +59,13 @@
 	*set has_mobile_data true
 
 *if missions = 6
-	*text_image chap_10b.svg center Chapter 10: The Шлакоблок
+	*text_image chap_10b.svg center Глава десятая: Шлакоблок
 	*gosub_scene date_calculator
 *elseif missions = 5
-	*text_image chap_9b.svg center Chapter 9: The Шлакоблок
+	*text_image chap_9b.svg center Глава девятая: Шлакоблок
 	*gosub_scene date_calculator
 *else
-	*text_image chap_8b.svg center Chapter 8: The Шлакоблок
+	*text_image chap_8b.svg center Глава восьмая: Шлакоблок
 	*gosub_scene date_calculator
 
 *gosub_scene last_three_intros
@@ -1171,7 +1171,7 @@
 				*goto childe_check
 			*else
 				*set club_mod -1
-				$!{ghoul}подходит с некоторой опаской. Сородичам вокруг Д'Эспин это не нравится. Они окружают твоего слугу, допрашивая и тыкая в ${ghoul_him_her}. Когда ${ghoul_he_she} полностью исчезает из виду, ты подходишь. Ты с облегчением находишь ${ghoul_him_her} невредимым…хотя теперь ты в центре внимания.
+				$!{ghoul} подходит с некоторой опаской. Сородичам вокруг Д'Эспин это не нравится. Они окружают твоего слугу, допрашивая и тыкая в ${ghoul_him_her}. Когда ${ghoul_he_she} полностью исчезает из виду, ты подходишь. Ты с облегчением находишь ${ghoul_him_her} невредимым…хотя теперь ты в центре внимания.
 
 				*if clan = "Тореадор"
 					"Ах, моё заблудшее дитя возвращается!" говорит Д'Эспин, её голос ледяной. "И в роли посыльного. Есть ли у Принца Леттоу новости для меня?"

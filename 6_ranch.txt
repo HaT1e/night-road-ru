@@ -2,13 +2,13 @@
 *set missions +1
 
 *if missions = 3
-	*text_image chap_6c.svg center Chapter Four: Киова Ксеногенетикс
+	*text_image chap_6c.svg center Глава четвёртая: Киова Ксеногенетикс
 	*gosub_scene date_calculator
 *elseif missions = 2
-	*text_image chap_5c.svg center Chapter Five: Киова Ксеногенетикс
+	*text_image chap_5c.svg center Глава пятая: Киова Ксеногенетикс
 	*gosub_scene date_calculator
 *else
-	*text_image chap_4c.svg center Chapter Six: Киова Ксеногенетикс
+	*text_image chap_4c.svg center Глава шестая: Киова Ксеногенетикс
 	*gosub_scene date_calculator
 
 *if missions = 1
@@ -765,7 +765,7 @@
 
 		"Потому что она раньше была чем-то большим, чем мы все," — говорит Вани, — "а теперь она намного меньше. Она пришла сюда, чтобы уничтожить доктора Коул, и Инвидия уничтожила её вместо этого."
 
-		Уничтожить доктора Коул — не убить её. Похоже, Вани знает, на кого она работает.
+		[i]Уничтожить[/i] доктора Коул — не убить её. Похоже, Вани знает, на кого она работает.
 	#Я хочу получить информацию. Должно быть легко притвориться научным репортёром и задавать учёным вопросы, хотя они разозлятся, если поймут, что я представляюсь не тем, кто я есть.@{em  [МАН+Хитрость/Технологии]|}
 		*comment Easy
 		*comment t_manipulation t_subterfuge
@@ -3960,7 +3960,7 @@ IC-12 не особо разговорчива, но она может след�
 	*set form "форма, чтобы у меня снова был мой пистолет"
 *if has_sword and has_gun
 	*set form "форма, чтобы у меня снова были мой меч и пистолет"
-*temp protean_attack "STR"
+*temp protean_attack "СИЛ"
 *if beast_form
 	*set protean_attack "ЛОВ"
 	*if composure < dexterity
