@@ -8842,7 +8842,6 @@
 *set prey_he_she "она"
 *set prey_him_her "её"
 *set prey_his_her "её"
-
 *if restriction = "молодые женщины"
 	*set prey_man_woman "молодая женщина"
 *if restriction = "молодые мужчины"
