@@ -328,7 +328,7 @@ $!{bag}
 		Самодельный ноутбук на Arduino @{has_infiltration_kit со специализированным набором для проникновения|}
 	*line_break
 *if has_suit
-	Хороший ${suit}
+	$!{suit}
 	*line_break
 *if blood_sorcery > 0
 	Взломанный Kindle Paperwhite, загруженный гримуарами Кровавой Магии

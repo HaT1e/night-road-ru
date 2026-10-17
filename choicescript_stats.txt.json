@@ -331,7 +331,7 @@
     "\t\tСамодельный ноутбук на Arduino @{has_infiltration_kit со специализированным набором для проникновения|}",
     "\t*line_break",
     "*if has_suit",
-    "\tХороший ${suit}",
+    "\t$!{suit}",
     "\t*line_break",
     "*if blood_sorcery > 0",
     "\tВзломанный Kindle Paperwhite, загруженный гримуарами Кровавой Магии",
