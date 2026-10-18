@@ -1,0 +1,31 @@
+<html>
+<head>
+<script>
+
+window.addEventListener('message', function(event) {
+  var email = event.data.email;
+  var game = event.data.game;
+  var head= document.getElementsByTagName('head')[0];
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  var timestamp = new Date().getTime();
+  var timeout = setTimeout(function() {
+    window["jsonp"+timestamp]({
+      result:"error", msg:"Не удалось подключиться. Пожалуйста, повторите попытку позже."
+    })
+  }, 10000);
+
+  window["jsonp"+timestamp] = function (x) {
+    clearTimeout(timeout);
+    event.source.postMessage(x, event.origin);
+  }
+
+  script.src = 'http://choiceofgames.us4.list-manage.com/subscribe/post-json?u=eba910fddc9629b2810db6182&id=e9cdee1aaa&c=jsonp'+timestamp+'&SIGNUP='+game+'-chrome&EMAIL=' + email;
+  head.appendChild(script);
+});
+
+
+
+</script>
+</head>
+<body></body></html>
